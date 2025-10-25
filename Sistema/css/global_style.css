@@ -1,0 +1,16 @@
+.bg-pattern {
+    background-image:
+        linear-gradient(to bottom,
+            rgba(191, 219, 254, 0.95) 0%, /* Azul pastel más intenso */
+            rgba(191, 219, 254, 0.95) 100%);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.dark .bg-pattern {
+    background-image:
+        linear-gradient(to bottom,
+            rgba(39, 52, 70, 0.97) 0%, /* Gris oscuro suave */
+            rgba(33, 45, 62, 0.97) 100%);
+}
