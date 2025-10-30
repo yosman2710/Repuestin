@@ -2,7 +2,7 @@
 
 
 
-$conn = new mysqli("localhost","root","","repuestos");
+$conn = new mysqli("localhost","root","","repuestos_tiramealgo");
 
 if ($conn -> connect_errno){
 
