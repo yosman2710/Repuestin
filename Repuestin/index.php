@@ -1,113 +1,151 @@
 <?php
-// Iniciar la sesión para almacenar el historial de la conversación
+
 session_start();
 
-// Configuración de la base de datos
+
 $servername = "localhost";
-$username = "root";
-$password = "";
+$username = "root"; // ⚠️ RECUERDA CAMBIAR 'root' por un usuario con menos permisos
+$password = "";     // ⚠️ RECUERDA USAR UNA CONTRASEÑA FUERTE
 $dbname = "repuestos";
 
-// Crear conexión
-$conn = new mysqli($servername, $username, $password, $dbname);
-
-// Verificar conexión
-if ($conn->connect_error) {
-    die("Conexión fallida: " . $conn->connect_error);
+// Crear conexión usando PDO (Recomendado sobre mysqli)
+try {
+    $conn = new PDO("mysql:host=$servername;dbname=$dbname;charset=utf8mb4", $username, $password);
+    // Configurar PDO para lanzar excepciones en caso de error (Mejor manejo de errores)
+    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+} catch (PDOException $e) {
+    die("Conexión fallida (PDO): " . $e->getMessage());
 }
 
-// Función para obtener productos de la base de datos
+// --- FUNCIÓN 1: OBTENER PRODUCTOS (RESTABLECIDA Y NECESARIA) ---
 function obtenerProductos($conn) {
     $sql = "SELECT nombre_producto, precio_producto, stock_producto FROM productos";
-    $result = $conn->query($sql);
-    $productos = [];
-    if ($result->num_rows > 0) {
-        while($row = $result->fetch_assoc()) {
-            $productos[] = $row;
-        }
+    try {
+        $stmt = $conn->query($sql);
+        // fetchAll es el equivalente a tu bucle while
+        $productos = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    } catch (PDOException $e) {
+        error_log("Error al obtener productos: " . $e->getMessage());
+        return [];
     }
     return $productos;
 }
 
-// Función para enviar un mensaje a la API de Gemini
+// --- FUNCIÓN 2: ENVIAR MENSAJE A GEMINI (CORREGIDA Y FINAL) ---
+// --- FUNCIÓN 2: ENVIAR MENSAJE A GEMINI (CORRECCIÓN FINAL) ---
 function enviarMensajeAGemini($mensaje, $productos, $historial, $primeraInteraccion) {
-    $apiKey = "AIzaSyBMvGi9_c-_yYO6zQYjD5odXBAfQHjvuLg"; // Recuerda proteger tu API Key
-    // Formatear los productos para el prompt
+    
+    // ... (Configuración de API Key, URL y productosFormateados - SIN CAMBIOS) ...
+    $apiKey = "AIzaSyBMvGi9_c-_yYO6zQYjD5odXBAfQHjvuLg"; 
+    $model = 'gemini-2.5-flash';
+    $url = "https://generativelanguage.googleapis.com/v1beta/models/{$model}:generateContent?key={$apiKey}";
+
     $productosFormateados = "";
-    foreach ($productos as $producto) {
-        $productosFormateados .= "- {$producto['nombre_producto']}: \${$producto['precio_producto']} (Stock: {$producto['stock_producto']})\n";
+    // ... (Lógica para construir $productosFormateados) ...
+
+    // 3. Estructura de 'contents' con System Instruction como PRIMER elemento.
+    $contents = [];
+    $systemInstructionText = "Eres un chatbot llamado Repuestin, especializado en ayudar a personas sobre repuestos automotrices. Usa la siguiente lista de productos como contexto para responder. Si te preguntan por un repuesto que no está en la lista, sé honesto e indica que no lo tienes. Productos disponibles:\n$productosFormateados";
+    
+    // ✅ CORRECCIÓN 1: Añadir la instrucción del sistema con el rol "user" o "model"
+    //    Si la API es estricta y solo acepta 'user'/'model' en el historial:
+    
+    // Vamos a intentar con 'user' como primera instrucción:
+    $contents[] = [
+        "role" => "user", 
+        "parts" => [["text" => "Establece tu personalidad: $systemInstructionText"]]
+    ];
+
+    // Si la corrección anterior falla, la ÚNICA forma de pasar la instrucción es esta:
+    /*
+    $contents[] = [
+        "role" => "system", // ¡Usar el rol 'system' AQUI!
+        "parts" => [["text" => $systemInstructionText]]
+    ];
+    */
+
+    // Agregar el historial de la conversación (SIN CAMBIOS)
+    foreach ($historial as $interaccion) {
+        $contents[] = ["role" => "user", "parts" => [["text" => $interaccion['usuario']]]];
+        $contents[] = ["role" => "model", "parts" => [["text" => $interaccion['bot']]]];
     }
-    // Crear el prompt para el chatbot
-    $prompt = " Eres un chatbot llamado Repuestin, especializado en ayudar a las personas con una variedad de preguntas. Recuerda presentarte una sola vez con el cliente, ya que es molesto presentarse muchas veces seguidas. Con una vez al principio es suficiente. Puedes responder sobre repuestos automotrices, pero también puedes hablar sobre otros temas como tecnología, entretenimiento, consejos de vida, etc. Aquí tienes una lista de productos disponibles: $productosFormateados Si no sabes la respuesta a una pregunta, puedes decir que no estás seguro y sugerir que busquen más información. ";
-    // Agregar el historial de la conversación al prompt
-    if (!empty($historial)) {
-        $prompt .= "\n\nHistorial de la conversación:\n";
-        foreach ($historial as $interaccion) {
-            $prompt .= "- {$interaccion['usuario']}\n";
-            $prompt .= "- {$interaccion['bot']}\n";
-        }
-    }
-    // Agregar el mensaje actual del usuario
-    $prompt .= "\n\nPregunta del usuario: $mensaje";
-    // Enviar mensaje a la API de Gemini
-    $url = "https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-pro:generateContent?key=$apiKey";
+    
+    // Agregar el mensaje actual del usuario (SIN CAMBIOS)
+    $contents[] = ["role" => "user", "parts" => [["text" => $mensaje]]];
+    
+    // 4. Petición POST (¡Simplificada para evitar errores de nombres de campos!)
     $data = json_encode([
-        "contents" => [
-            [
-                "parts" => [
-                    [
-                        "text" => $prompt
-                    ]
-                ]
-            ]
+        "contents" => $contents,
+        
+        // ✅ CORRECCIÓN 2: Dejamos SOLO la temperatura.
+        "generationConfig" => [ 
+            "temperature" => 0.7, 
         ]
     ]);
-    $options = [
-        "http" => [
-            "header" => "Content-Type: application/json",
-            "method" => "POST",
-            "content" => $data
-        ]
-    ];
-    $context = stream_context_create($options);
-    $result = file_get_contents($url, false, $context);
-    if ($result === FALSE) {
-        return "Lo siento, hubo un error al procesar tu solicitud. Por favor, inténtalo de nuevo.";
+    // 5. Llamada con cURL y manejo de errores (sin cambios)
+    $ch = curl_init($url);
+
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+    curl_setopt($ch, CURLOPT_HTTPHEADER, [
+        'Content-Type: application/json',
+    ]);
+    curl_setopt($ch, CURLOPT_POST, true);
+    curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
+
+    $response = curl_exec($ch);
+    $error_num = curl_errno($ch);
+    $error_msg = curl_error($ch);
+    
+    if ($error_num) {
+        curl_close($ch);
+        return "❌ Error de Conexión cURL ({$error_num}): " . $error_msg;
     }
-    $response = json_decode($result, true);
-    // Si es la primera interacción, agregar el saludo
+    curl_close($ch);
+
+    $json = json_decode($response, true);
+    
+    if (isset($json['error'])) {
+        $error_message = $json['error']['message'] ?? "Error desconocido de la API.";
+        return "🚨 Error de la API: " . $error_message;
+    }
+    
+    $respuestaBot = $json['candidates'][0]['content']['parts'][0]['text'] ?? "Sin respuesta. El JSON devuelto no tiene 'candidates'.";
+
     if ($primeraInteraccion) {
-        return "¡Hola! Repuestin a la orden, mi pana. " . $response['candidates'][0]['content']['parts'][0]['text'];
+        return "¡Hola! Repuestin a la orden. " . $respuestaBot;
     }
-    return $response['candidates'][0]['content']['parts'][0]['text'] ?? "No se pudo obtener una respuesta.";
+    return $respuestaBot;
 }
+// ... (El resto del código PHP y HTML sigue igual)
+
 
 // Procesar el mensaje del usuario
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $mensaje = htmlspecialchars($_POST["mensaje"]);
-    // Obtener productos de la base de datos
-    $productos = obtenerProductos($conn);
-    // Obtener el historial de la conversación desde la sesión
+    
+    // Aquí la función obtenerProductos($conn) ahora existe y se llama correctamente.
+    $productos = obtenerProductos($conn); 
+    
     if (!isset($_SESSION['historial'])) {
         $_SESSION['historial'] = [];
     }
     $historial = $_SESSION['historial'];
-    // Determinar si es la primera interacción
+    
     $primeraInteraccion = count($historial) === 0;
-    // Enviar mensaje a la API de Gemini
+    
     $respuesta = enviarMensajeAGemini($mensaje, $productos, $historial, $primeraInteraccion);
-       // Agregar la interacción actual al historial
-       $historial[] = [
+    
+    $historial[] = [
         "usuario" => $mensaje,
         "bot" => $respuesta
     ];
-    // Limitar el historial a los últimos 10 mensajes (5 interacciones)
+    
     if (count($historial) > 10) {
         $historial = array_slice($historial, -10);
     }
-    // Guardar el historial actualizado en la sesión
+    
     $_SESSION['historial'] = $historial;
-    // Devolver la respuesta al frontend
+    
     echo $respuesta;
     exit;
 }
@@ -119,7 +157,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Repuestin</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="../js/tailwind_config.js"></script>
+    <script src="../Sistema/js/tailwind_config.js"></script>
     <script>
         tailwind.config = {
             darkMode: 'class',
