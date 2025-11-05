@@ -18,7 +18,7 @@ $_SESSION['time'] = time();
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/ico" href="../assets/images/configuraciones.ico">
-  <title>Reportes - Autorepuestos Johbri</title>
+  <title>Reportes - Autorepuestos</title>
   <link rel="shortcut icon" href="./LOGO-VENTANA.png" type="image/x-icon">
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="../js/tailwind_config.js"></script>

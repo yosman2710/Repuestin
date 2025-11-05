@@ -45,7 +45,7 @@ if (isset($_GET['numero_de_parte'])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Editar Producto - Autorepuestos Johbri</title>
+    <title>Editar Producto - Autorepuestos</title>
     <link rel="icon" type="image/ico" href="../assets/images/configuraciones.ico">
     <link rel="shortcut icon" href="./LOGO-VENTANA.png" type="image/x-icon">
     <script src="https://cdn.tailwindcss.com"></script>
@@ -221,7 +221,7 @@ if (isset($_GET['numero_de_parte'])) {
     </main>
 
     <footer class="bg-custom-blue dark:bg-gray-800 text-white text-center py-4 fixed bottom-0 w-full text-sm">
-        <p>&copy; 2025 Autorepuestos Johbri, C.A. - Todos los derechos reservados</p>
+        <p>&copy; 2025 Autorepuestos, C.A. - Todos los derechos reservados</p>
     </footer>
 
         document.addEventListener('DOMContentLoaded', function() {

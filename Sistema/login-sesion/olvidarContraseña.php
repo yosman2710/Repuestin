@@ -94,7 +94,7 @@
   </div>
 </main>
   <footer class="bg-custom-blue/95 dark:bg-gray-800/95 backdrop-blur-sm text-white text-center py-4 fixed bottom-0 w-full text-sm sm:text-base shadow-lg">
-    <p>&copy; 2025 Autorepuestos Johbri, C.A. - Todos los derechos reservados</p>
+    <p>&copy; 2025 Autorepuestos, C.A. - Todos los derechos reservados</p>
   </footer>
   <script>
     document.addEventListener('DOMContentLoaded', function() {

@@ -50,7 +50,7 @@ $result_items = $stmt->get_result();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="./LOGO-VENTANA.png" type="image/x-icon">
 
-    <title>Detalle de Orden - Autorepuestos Johbri</title>
+    <title>Detalle de Orden - Autorepuestos</title>
 
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="../js/tailwind_config.js"></script>
@@ -171,7 +171,7 @@ $result_items = $stmt->get_result();
     </main>
 
     <footer class="bg-custom-blue dark:bg-gray-800 text-white text-center py-4 fixed bottom-0 w-full text-sm">
-        <p>&copy; 2025 Autorepuestos Johbri, C.A. - Todos los derechos reservados</p>
+        <p>&copy; 2025 Autorepuestos, C.A. - Todos los derechos reservados</p>
     </footer>
 
     </script>

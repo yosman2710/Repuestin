@@ -51,7 +51,7 @@ $success_message = isset($_GET['success_message']) ? $_GET['success_message'] : 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/ico" href="../assets/images/configuraciones.ico">
-    <title>Lista de Productos - Autorepuestos Johbri</title>
+    <title>Lista de Productos - Autorepuestos</title>
     <link rel="shortcut icon" href="./LOGO-VENTANA.png" type="image/x-icon">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>

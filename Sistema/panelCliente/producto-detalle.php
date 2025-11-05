@@ -46,7 +46,7 @@ $foto_producto = obtenerRutasArchivos($producto['id_producto']);
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><?php echo htmlspecialchars($producto['nombre_producto']); ?> - Autorepuestos Johbri, C.A.</title>
+    <title><?php echo htmlspecialchars($producto['nombre_producto']); ?> - Autorepuestos, C.A.</title>
     <link rel="shortcut icon" href="./LOGO-VENTANA.png" type="image/x-icon">
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="../js/tailwind_config.js"></script>
@@ -77,7 +77,7 @@ $foto_producto = obtenerRutasArchivos($producto['id_producto']);
                 </svg>
                 <span class="text-sm">Volver</span>
             </a>
-            <div class="text-xl font-bold">Autorepuestos Johbri, C.A.</div>
+            <div class="text-xl font-bold">Autorepuestos, C.A.</div>
             <div class="flex items-center gap-4">
                 <button
                     onclick="toggleDarkMode()"
@@ -174,7 +174,7 @@ $foto_producto = obtenerRutasArchivos($producto['id_producto']);
     </main>
 
     <footer class="bg-custom-blue dark:bg-gray-800 text-white text-center py-4 fixed bottom-0 w-full text-sm">
-        <p>&copy; 2025 Autorepuestos Johbri, C.A. - Todos los derechos reservados</p>
+        <p>&copy; 2025 Autorepuestos, C.A. - Todos los derechos reservados</p>
     </footer>
 
     <script>

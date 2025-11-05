@@ -59,7 +59,7 @@ $total = $subtotal + $iva;
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Carrito de Compras - Autorepuestos Johbri</title>
+    <title>Carrito de Compras - Autorepuestos</title>
     <link rel="shortcut icon" href="./LOGO-VENTANA.png" type="image/x-icon">
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="../js/tailwind_config.js"></script>
@@ -208,7 +208,7 @@ $total = $subtotal + $iva;
     </main>
 
     <footer class="bg-custom-blue dark:bg-gray-800 text-white text-center py-4 fixed bottom-0 w-full text-sm">
-        <p>&copy; 2025 Autorepuestos Johbri, C.A. - Todos los derechos reservados</p>
+        <p>&copy; 2025 Autorepuestos, C.A. - Todos los derechos reservados</p>
     </footer>
 
     <script>

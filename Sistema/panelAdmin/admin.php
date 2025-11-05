@@ -76,7 +76,7 @@ if ($result->num_rows > 0) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="./LOGO-VENTANA.png" type="image/x-icon">
 
-    <title>Panel de Administración - Autorepuestos Johbri</title>
+    <title>Panel de Administración - Autorepuestos</title>
 
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="../js/tailwind_config.js"></script>

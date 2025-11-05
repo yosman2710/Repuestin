@@ -27,7 +27,7 @@ $success_message = isset($_GET['success_message']) ? $_GET['success_message'] : 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="./LOGO-VENTANA.png" type="image/x-icon">
 
-    <title>Agregar Producto - Autorepuestos Johbri</title>
+    <title>Agregar Producto - Autorepuestos</title>
 
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="../js/tailwind_config.js"></script>

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Autorepuestos Johbri, C.A.</title>
+    <title>Autorepuestos, C.A.</title>
     <link rel="shortcut icon" href="./LOGO-VENTANA.png" type="image/x-icon">
 
     <!-- Incluir Tailwind CSS -->
@@ -136,7 +136,7 @@
     </main>
 
     <footer class="bg-custom-blue/95 dark:bg-gray-800/95 backdrop-blur-sm text-white text-center py-4 fixed bottom-0 w-full text-sm sm:text-base shadow-lg">
-        <p>&copy; 2025 Autorepuestos Johbri, C.A. - Todos los derechos reservados</p>
+        <p>&copy; 2025 Autorepuestos, C.A. - Todos los derechos reservados</p>
     </footer>
 
     <!-- Incluir la configuración de Particles.js -->

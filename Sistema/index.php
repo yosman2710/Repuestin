@@ -4,7 +4,7 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Autorepuestos Johbri, C.A.</title>
+    <title>Autorepuestos, C.A.</title>
     <link rel="shortcut icon" href="./LOGO-VENTANA.png" type="image/x-icon">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="./css/index_global_style.css">
@@ -14,7 +14,7 @@
 </head>
 <body class="bg-pattern transition-colors duration-200">
     <nav class="bg-custom-blue/95 backdrop-blur-sm dark:bg-gray-800/95 text-white px-6 py-4 flex justify-between items-center fixed w-full top-0 z-50 shadow-lg">
-        <div class="text-xl sm:text-2xl font-bold">Autorepuestos Johbri, C.A.</div>
+        <div class="text-xl sm:text-2xl font-bold">Autorepuestos, C.A.</div>
         <div class="flex items-center gap-4">
             <button
                 onclick="toggleDarkMode()"
@@ -45,7 +45,7 @@
     </main>
 
     <footer class="bg-custom-blue/95 dark:bg-gray-800/95 backdrop-blur-sm text-white text-center py-4 fixed bottom-0 w-full text-sm sm:text-base shadow-lg">
-        <p>&copy; 2024 Autorepuestos Johbri, C.A. - Todos los derechos reservados</p>
+        <p>&copy; 2025 Autorepuestos, C.A. - Todos los derechos reservados</p>
     </footer>
 
 </body>
