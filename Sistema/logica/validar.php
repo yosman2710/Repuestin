@@ -30,7 +30,7 @@ require 'conexionbdd.php';
 
     function verificarContrasena($contrasenaIngresada, $tabla, $correo) {
 
-        $conexion = new mysqli("localhost", "root", "", "repuestos");
+        $conexion = new mysqli("localhost", "root", "", "repuestos_tiramealgo");
 
         if ($conexion->connect_error) {
             die("Error de conexión: " . $conexion->connect_error);
@@ -129,8 +129,8 @@ require 'conexionbdd.php';
     }   
 
     function obtenerRutasArchivos($id) {
-        
-        $conn = new mysqli('localhost', 'root', '', 'repuestos');
+
+        $conn = new mysqli('localhost', 'root', '', 'repuestos_tiramealgo');
 
         if ($conn->connect_error) {
             die("Error de conexión: " . $conn->connect_error);
@@ -162,7 +162,7 @@ require 'conexionbdd.php';
 
     function buscarRIF ($codigo) {
         $host = 'localhost';
-        $db = 'repuestos'; 
+        $db = 'repuestos_tiramealgo'; 
         $user = 'root'; 
         $pass = '';
 
@@ -188,7 +188,7 @@ require 'conexionbdd.php';
     }
 
     function buscarAdmin($correo, $tabla) {
-        $conexion = new mysqli("localhost", "root", "", "repuestos");
+        $conexion = new mysqli("localhost", "root", "", "repuestos_tiramealgo");
     
         if ($conexion->connect_error) {
             die("Error de conexión: " . $conexion->connect_error);
@@ -255,7 +255,7 @@ require 'conexionbdd.php';
     }
 
     function buscarNumPart($correo, $tabla) {
-        $conexion = new mysqli("localhost", "root", "", "repuestos");
+        $conexion = new mysqli("localhost", "root", "", "repuestos_tiramealgo");
     
         if ($conexion->connect_error) {
             die("Error de conexión: " . $conexion->connect_error);
@@ -285,7 +285,7 @@ require 'conexionbdd.php';
     }
 
     function obtenerIdProducto($numeroParte) {
-        $conexion = new mysqli("localhost", "root", "", "repuestos");
+        $conexion = new mysqli("localhost", "root", "", "repuestos_tiramealgo");
     
         if ($conexion->connect_error) {
             die("Error de conexión: " . $conexion->connect_error);
@@ -311,7 +311,7 @@ require 'conexionbdd.php';
     }
 
     function insertarFotos($archivo, $fotonum, $id_producto) {
-        $conn = new mysqli('localhost', 'root', '', 'repuestos');
+        $conn = new mysqli('localhost', 'root', '', 'repuestos_tiramealgo');
             if ($archivo['error'] === UPLOAD_ERR_OK) {
         
                 $nombre_variable = $_POST['num_parte']." - ". $fotonum;

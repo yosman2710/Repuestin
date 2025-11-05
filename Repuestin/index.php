@@ -6,7 +6,7 @@ session_start();
 $servername = "localhost";
 $username = "root"; // ⚠️ RECUERDA CAMBIAR 'root' por un usuario con menos permisos
 $password = "";     // ⚠️ RECUERDA USAR UNA CONTRASEÑA FUERTE
-$dbname = "repuestos";
+$dbname = "repuestos_tiramealgo";
 
 // Crear conexión usando PDO (Recomendado sobre mysqli)
 try {
