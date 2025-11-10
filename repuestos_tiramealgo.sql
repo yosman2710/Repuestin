@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 07-11-2025 a las 01:39:52
+-- Tiempo de generación: 03-11-2025 a las 19:36:37
 -- Versión del servidor: 10.4.28-MariaDB
 -- Versión de PHP: 8.2.4
 
@@ -41,7 +41,7 @@ CREATE TABLE `administrador` (
 --
 
 INSERT INTO `administrador` (`id_administrador`, `nombre_administrador`, `correo`, `contrasena`, `cargo`, `intentos`) VALUES
-(1, 'Respuestos TirameAlgo', 'tiramealgo_admin@gmail.com', 'admin', 'Dueño', 0);
+(1, 'Respuestos TirameAlgo', 'tiramealgo_admin@gmail.com', 'admin_123', 'Dueño', 0);
 
 -- --------------------------------------------------------
 
@@ -82,7 +82,8 @@ CREATE TABLE `clientes` (
 --
 
 INSERT INTO `clientes` (`id`, `nombre_empresa`, `rif`, `telefono_empresa`, `direccion`, `nombre_encargado`, `cedula_encargado`, `telefono_encargado`, `correo`, `contrasena`, `estado_cliente`, `intentos`) VALUES
-(2, 'Diesel Y Turbos Venezuela', 'J-50081587-5', '04246263179', '40012', 'Jesus jimenez', 'V-30605170', '04166626450', 'jimenez@gmail.com', 'Jimenez.123', 'Activo', 0);
+(2, 'Diesel Y Turbos Venezuela', 'J-50081587-5', '04246263179', '40012', 'Jesus Jimenez', 'V-28145124', '04146839084', 'jimenez@gmail.com', 'Jimenez.123', 'Activo', 0),
+(3, 'Repuestos la rotaria', 'J-95869555-8', '04166626450', '4006', 'Andres petit', 'V-30749577', '04146134310', 'petit@gmail.com', 'petit.123', 'Activo', 0);
 
 -- --------------------------------------------------------
 
@@ -110,20 +111,6 @@ CREATE TABLE `foto_productos` (
   `num_foto` int(11) DEFAULT NULL,
   `id_producto` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Volcado de datos para la tabla `foto_productos`
---
-
-INSERT INTO `foto_productos` (`id_foto`, `ruta_foto`, `num_foto`, `id_producto`) VALUES
-(40, '../assets/foto-repuestos/88863336 - 1.webp', 1, 31),
-(41, '../assets/foto-repuestos/88863336 - 2.webp', 2, 31),
-(42, '../assets/foto-repuestos/88863336 - 3.webp', 3, 31),
-(43, '../assets/foto-repuestos/481H1012010 - 1.webp', 1, 32),
-(44, '../assets/foto-repuestos/481H1012010 - 2.webp', 2, 32),
-(45, '../assets/foto-repuestos/481H1012010 - 3.webp', 3, 32),
-(46, '../assets/foto-repuestos/481H1012010 - 4.webp', 4, 32),
-(47, '../assets/foto-repuestos/0414 - 1.jpg', 1, 33);
 
 -- --------------------------------------------------------
 
@@ -154,18 +141,22 @@ CREATE TABLE `productos` (
   `stock_producto` int(11) DEFAULT NULL,
   `descripcion_producto` text DEFAULT NULL,
   `fecha_creacion` date DEFAULT NULL,
-  `hora_creacion` time DEFAULT NULL
+  `hora_creacion` time DEFAULT NULL,
+  `id_proveedor` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+-- --------------------------------------------------------
+
 --
--- Volcado de datos para la tabla `productos`
+-- Estructura de tabla para la tabla `proveedor`
 --
 
-INSERT INTO `productos` (`id_producto`, `numero_de_parte`, `nombre_producto`, `categoria_producto`, `marca_producto`, `precio_producto`, `stock_producto`, `descripcion_producto`, `fecha_creacion`, `hora_creacion`) VALUES
-(31, '88863336', 'Refrigerante Dex Cool Importado', 'Frenos', 'Chevrolet', 20.00, 98, '', '2025-03-16', '20:40:06'),
-(32, '481H1012010', 'Filtro de Aceite de Motor 484 (Varios modelos)', 'Frenos', 'Toyota', 20.00, 210, 'Descripción:\r\nRepuesto Original CHERY\r\n\r\nNo. de Parte: 481H1012010\r\n\r\nCaracterísticas:\r\n\r\nDimensiones: 9 x 9 x 10 cm3\r\nPeso: 0,10 Kg.\r\nModelos de Aplicación:\r\n\r\nCHERY | ORINOCO A/T | ORINOCO M/T | H5 | TIGGO | TIGGO 5 | X5', '2025-03-16', '22:50:21'),
-(33, '0414', 'Catalizador', 'Inyección', 'Mitsubishi', 105.55, 1, 'For All Mitsubishi Cars- Catalytic Converter High Quality For Cleaner Drives. \r\n\r\nUnas palabras tecnicas Ahi.', '2025-03-25', '17:43:46'),
-(35, '17801-0Y040', 'FILTRO DE AIRE YARIS 12-22', 'Filtros', 'Toyota', 35.00, 15, '', '2025-11-06', '20:22:16');
+CREATE TABLE `proveedor` (
+  `id_proveedor` int(11) NOT NULL,
+  `nombre_proveedor` varchar(100) NOT NULL,
+  `direccion_proveedor` varchar(200) NOT NULL,
+  `telefono_proveedor` varchar(45) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Índices para tablas volcadas
@@ -222,7 +213,14 @@ ALTER TABLE `ordenes`
 --
 ALTER TABLE `productos`
   ADD PRIMARY KEY (`id_producto`),
-  ADD UNIQUE KEY `numero_de_parte` (`numero_de_parte`);
+  ADD UNIQUE KEY `numero_de_parte` (`numero_de_parte`),
+  ADD KEY `id_proveedor` (`id_proveedor`);
+
+--
+-- Indices de la tabla `proveedor`
+--
+ALTER TABLE `proveedor`
+  ADD PRIMARY KEY (`id_proveedor`);
 
 --
 -- AUTO_INCREMENT de las tablas volcadas
@@ -268,7 +266,13 @@ ALTER TABLE `ordenes`
 -- AUTO_INCREMENT de la tabla `productos`
 --
 ALTER TABLE `productos`
-  MODIFY `id_producto` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
+  MODIFY `id_producto` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
+
+--
+-- AUTO_INCREMENT de la tabla `proveedor`
+--
+ALTER TABLE `proveedor`
+  MODIFY `id_proveedor` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- Restricciones para tablas volcadas
@@ -299,6 +303,12 @@ ALTER TABLE `foto_productos`
 --
 ALTER TABLE `ordenes`
   ADD CONSTRAINT `ordenes_ibfk_1` FOREIGN KEY (`cliente_id`) REFERENCES `clientes` (`id`) ON DELETE CASCADE;
+
+--
+-- Filtros para la tabla `productos`
+--
+ALTER TABLE `productos`
+  ADD CONSTRAINT `productos_ibfk_1` FOREIGN KEY (`id_proveedor`) REFERENCES `proveedor` (`id_proveedor`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
