@@ -302,7 +302,7 @@ if ($result->num_rows > 0) {
                                     </td>
                                     <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
                                         <div class="flex space-x-2">
-                                            <a class="bg-yellow-500 hover:bg-yellow-600 text-white px-3 py-1 rounded-md transition-colors duration-200">
+                                            <a href="editarProducto.php?numero_de_parte=<?php echo $row['numero_de_parte']; ?>" class="bg-yellow-500 hover:bg-yellow-600 text-white px-3 py-1 rounded-md transition-colors duration-200">
                                                 Editar
                                             </a>
                                         </div>
