@@ -78,7 +78,7 @@ $client_data = $result->fetch_assoc();
 
         .product-details {
             padding: 1.5rem;
-            background-color: white;
+            background-color: custom-gray;
             color: black;
             flex-grow: 1;
         }
@@ -178,26 +178,26 @@ $client_data = $result->fetch_assoc();
     <div class="fixed left-0 top-16 h-full w-64 bg-custom-gray backdrop-blur-sm dark:bg-custom-steelDark shadow-lg">
         <div class="p-4">
             <nav class="space-y-2">
-                <a href="#dashboard" class="block px-4 py-2 rounded-lg bg-custom-blue text-white hover:bg-custom-blue-light transition-colors">
+                <a class="block px-4 py-2 rounded-lg text-custom-silverLight  transition-colors">
                     Dashboard
                 </a>
                 <div class="space-y-1">
-                    <div class="px-4 py-2 text-sm font-semibold text-gray-600 dark:text-white">Mi Cuenta</div>
-                    <a href="./comprasCliente.php" class="block px-4 py-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors dark:text-gray-400">
+                    <div class="px-4 py-2 text-sm font-semibold text-custom-steelDark dark:text-custom-silver">Mi Cuenta</div>
+                    <a href="./comprasCliente.php" class="block px-4 py-2 rounded-lg hover:bg-custom-steelDark dark:hover:bg-custom-gray hover:text-custom-silver dark:hover:text-custom-black transition-colors dark:text-gray-400">
                         Mis Compras
                     </a>
-                    <a href="./catalogo.php" class="block px-4 py-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors dark:text-gray-400">
+                    <a href="./catalogo.php" class="block px-4 py-2 rounded-lg hover:bg-custom-steelDark dark:hover:bg-custom-gray hover:text-custom-silver dark:hover:text-custom-black transition-colors dark:text-gray-400">
                         Catálogo de Productos
                     </a>
-                    <a href="./carrito.php" class="flex px-4 py-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 dark:text-gray-400 transition-colors items-center justify-between">
+                    <a href="./carrito.php" class="flex px-4 py-2 rounded-lg hover:bg-custom-steelDark dark:hover:bg-custom-gray hover:text-custom-silver dark:hover:text-custom-black dark:text-gray-400 transition-colors items-center justify-between">
                         <span>Carrito de Compras</span>
                         <span id="cart-count" class="bg-custom-blue text-white text-xs px-2 py-1 rounded-full"></span>
                     </a>
-                    <a href="./datosCliente.php" class="block px-4 py-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 dark:text-gray-400 transition-colors">
+                    <a href="./datosCliente.php" class="block px-4 py-2 rounded-lg hover:bg-custom-steelDark dark:hover:bg-custom-gray hover:text-custom-silver dark:hover:text-custom-black dark:text-gray-400 transition-colors">
                         Mis Datos
                     </a>
                     <!-- Nueva opción de Repuestos -->
-                    <a href="./repuestin.php" class="block px-4 py-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 dark:text-gray-400 transition-colors">
+                    <a href="./repuestin.php" class="block px-4 py-2 rounded-lg hover:bg-custom-steelDark dark:hover:bg-custom-gray hover:text-custom-silver dark:hover:text-custom-black dark:text-gray-400 transition-colors">
                         Repuestin
                     </a>
                 </div>
@@ -208,7 +208,7 @@ $client_data = $result->fetch_assoc();
     <!-- Contenido Principal -->
     <main class="ml-64 pt-24 px-6 pb-20">
         <!-- Carrusel de Productos -->
-        <div id="product-carousel" class="relative overflow-hidden rounded-lg shadow-lg">
+        <div class="relative overflow-hidden rounded-lg shadow-lg">
             <!-- Carrusel Track -->
             <div id="carousel-track" class="flex h-[500px] transition-transform duration-500 ease-in-out">
                 <?php
@@ -225,7 +225,7 @@ $client_data = $result->fetch_assoc();
                         </div>
 
                         <!-- Detalles del Producto -->
-                        <div class="w-full md:w-1/2 p-6 md:p-8 bg-white dark:bg-gray-800 flex flex-col">
+                        <div class="w-full md:w-1/2 p-6 md:p-8 bg-custom-gray dark:bg-custom-steelDark flex flex-col">
                             <div class="flex justify-between items-start mb-2">
                                 <h3 class="text-2xl font-bold text-gray-900 dark:text-white"><?php echo $row['nombre_producto']; ?></h3>
                                 <span class="text-sm text-gray-500 dark:text-gray-400">
@@ -233,17 +233,17 @@ $client_data = $result->fetch_assoc();
                                 </span>
                             </div>
 
-                            <div class="mb-2 text-sm font-medium text-blue-600 dark:text-blue-400">
+                            <div class="mb-2 text-sm font-medium text-custom-black dark:text-custom-silverLight">
                                 <?php echo $row['categoria_producto']; ?>
                             </div>
 
-                            <p class="text-gray-600 dark:text-gray-300 mb-6 flex-grow">
+                            <p class="text-custom-silver dark:text-custom-gray mb-6 flex-grow">
                                 <?php echo $row['descripcion_producto']; ?>
                             </p>
 
                             <div class="mt-auto">
                                 <div class="flex items-baseline gap-2 mb-4">
-                                    <span class="text-3xl font-bold text-blue-600 dark:text-blue-400">
+                                    <span class="text-3xl font-bold text-custom-black dark:text-custom-silverLight">
                                         $<?php echo number_format($row['precio_producto'], 2); ?>
                                     </span>
                                 </div>
@@ -251,7 +251,7 @@ $client_data = $result->fetch_assoc();
                                 <!-- In the carousel section, change the button onclick to: -->
                                 <button
                                     onclick="addToCart(<?php echo $row['id_producto']; ?>)"
-                                    class="w-full md:w-auto bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-lg flex items-center justify-center gap-2"
+                                    class="w-full md:w-auto bg-custom-orange hover:bg-custom-wineDark text-custom-silverLight px-6 py-2 rounded-lg flex items-center justify-center gap-2"
                                 >
                                     <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />

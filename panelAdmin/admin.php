@@ -109,40 +109,40 @@ if ($result->num_rows > 0) {
     <div class="fixed left-0 top-16 h-full w-64 bg-custom-gray backdrop-blur-sm dark:bg-custom-steelDark shadow-lg">
         <div class="p-4">
             <nav class="space-y-2">
-                <a class="block px-4 py-2 rounded-lg bg-custom-blue text-white hover:bg-custom-blue-light transition-colors">
+                <a class="block px-4 py-2 rounded-lg text-custom-silverLight  transition-colors">
                     Dashboard
                 </a>
                 <div class="space-y-1">
-                    <div class="px-4 py-2 text-sm font-semibold text-gray-600 dark:text-white">Productos</div>
-                    <a href="./ver-producto.php" class="block px-4 py-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors dark:text-gray-400">
+                    <div class="px-4 py-2 text-sm font-semibold text-custom-steelDark dark:text-custom-silver">Productos</div>
+                    <a href="./ver-producto.php" class="block px-4 py-2 rounded-lg hover:bg-custom-steelDark dark:hover:bg-custom-gray hover:text-custom-silver dark:hover:text-custom-black transition-colors dark:text-gray-400">
                         Ver Productos
                     </a>
-                    <a href="./agregar-producto.php" class="block px-4 py-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 dark:text-gray-400 transition-colors">
+                    <a href="./agregar-producto.php" class="block px-4 py-2 rounded-lg hover:bg-custom-steelDark dark:hover:bg-custom-gray hover:text-custom-silver dark:hover:text-custom-black dark:text-gray-400 transition-colors">
                         Agregar Producto
                     </a>
                 </div>
                 <div class="space-y-1">
-                    <div class="px-4 py-2 text-sm font-semibold text-gray-600 dark:text-white">Clientes</div>
-                    <a href="verClientes.php" class="block px-4 py-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 dark:text-gray-400 transition-colors">
+                    <div class="px-4 py-2 text-sm font-semibold text-custom-steelDark dark:text-custom-silver">Clientes</div>
+                    <a href="verClientes.php" class="block px-4 py-2 rounded-lg hover:bg-custom-steelDark dark:hover:bg-custom-gray hover:text-custom-silver dark:hover:text-custom-black dark:text-gray-400 transition-colors">
                         Clientes
                     </a>
-                    <a href="./agregarCliente.php" class="block px-4 py-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 dark:text-gray-400 transition-colors">
+                    <a href="./agregarCliente.php" class="block px-4 py-2 rounded-lg hover:bg-custom-steelDark dark:hover:bg-custom-gray hover:text-custom-silver dark:hover:text-custom-black dark:text-gray-400 transition-colors">
                         Agregar Clientes
                     </a>
                 </div>
                 <div class="space-y-1">
-                    <div class="px-4 py-2 text-sm font-semibold text-gray-600 dark:text-white">Reportes</div>
-                    <a href="./reportes.php" class="block px-4 py-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 dark:text-gray-400 transition-colors">
+                    <div class="px-4 py-2 text-sm font-semibold text-custom-steelDark dark:text-custom-silver">Reportes</div>
+                    <a href="./reportes.php" class="block px-4 py-2 rounded-lg hover:bg-custom-steelDark dark:hover:bg-custom-gray hover:text-custom-silver dark:hover:text-custom-black dark:text-gray-400 transition-colors">
                         Reporte de Ventas
                     </a>
-                    <a href="./ordenes.php" class="block px-4 py-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 dark:text-gray-400 transition-colors">
+                    <a href="./ordenes.php" class="block px-4 py-2 rounded-lg hover:bg-custom-steelDark dark:hover:bg-custom-gray hover:text-custom-silver dark:hover:text-custom-black dark:text-gray-400 transition-colors">
                         Órdenes
                     </a>
                 </div>
                 <div class="space-y-1">
-                    <div class="px-4 py-2 text-sm font-semibold text-gray-600 dark:text-white">Estadisticas</div>
+                    <div class="px-4 py-2 text-sm font-semibold text-custom-steelDark dark:text-custom-silver">Estadisticas</div>
 
-                    <a href="./estadisticas.php" class="block px-4 py-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 dark:text-gray-400 transition-colors">
+                    <a href="./estadisticas.php" class="block px-4 py-2 rounded-lg hover:bg-custom-steelDark dark:hover:bg-custom-gray hover:text-custom-silver dark:hover:text-custom-black dark:text-gray-400 transition-colors">
                         Ver
                     </a>
                 </div>
@@ -226,7 +226,7 @@ if ($result->num_rows > 0) {
 
         <!-- Tabla de Productos -->
         <div class="bg-custom-silverLight dark:bg-custom-steelDark rounded-lg shadow-md overflow-hidden">
-            <div class="p-6 border-b border-gray-200 dark:border-gray-700">
+            <div class="p-6 border-b border-gray-200 dark:border-custom-gray">
                 <div class="flex justify-between items-center">
                     <h3 class="text-lg font-semibold text-gray-800 dark:text-white">Productos Recientes</h3>
                     <a>
@@ -237,7 +237,7 @@ if ($result->num_rows > 0) {
                 </div>
             </div>
             <div class="overflow-x-auto">
-                <table class="min-w-full divide-y divide-gray-200 dark:divide-gray-700">
+                <table class="min-w-full divide-y divide-gray-200 dark:divide-custom-gray">
                     <thead class="bg-custom-silverLight dark:bg-custom-steelDark">
                         <tr>
                             <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">
@@ -254,7 +254,7 @@ if ($result->num_rows > 0) {
                             </th>
                         </tr>
                     </thead>
-                    <tbody class="bg-custom-silverLight dark:bg-custom-steelDark divide-y divide-gray-200 dark:divide-gray-700">
+                    <tbody class="bg-custom-silverLight dark:bg-custom-steelDark divide-y divide-gray-200 dark:divide-custom-gray">
 
                         <?php
                         $sql_productos = "SELECT * FROM productos ORDER BY fecha_creacion DESC, hora_creacion DESC LIMIT 4;";
