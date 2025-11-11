@@ -103,55 +103,55 @@ if (isset($_GET['numero_de_parte'])) {
             <br>
             <!-- Encabezado -->
             <div class="mb-6">
-                <h1 class="text-2xl font-bold text-gray-900 dark:text-white">Editar Producto</h1>
+                <h1 class="text-2xl font-bold text-custom-black dark:text-custom-silverLight">Editar Producto</h1>
                 <p class="text-gray-600 dark:text-gray-400">Modifica los detalles del producto según sea necesario</p>
             </div>
 
             <!-- Formulario -->
-            <form action="../logica/actualizar-producto.php" method="POST" class="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6">
+            <form action="../logica/actualizar-producto.php" method="POST" class="bg-custom-silverLight dark:bg-custom-steelDark rounded-lg shadow-md p-6">
                 <!-- Información básica -->
                 <div class="space-y-6">
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <!-- Número de parte -->
                         <div>
-                            <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
+                            <label class="block text-sm font-medium text-custom-gray dark:text-custom-silver mb-1">
                                 Número de parte
                             </label>
                             <input type="text" name="numero_de_parte_campo"
-                                class="w-full px-4 py-2 rounded-md border border-gray-300 dark:border-gray-600
-                                    dark:bg-gray-700 dark:text-white focus:ring-2 focus:ring-custom-blue"
+                                class="w-full px-4 py-2 rounded-md border border-custom-gray dark:border-custom-gray
+                                    dark:bg-custom-gray dark:text-custom-silverLight focus:ring-2 focus:ring-custom-red"
                                 value="<?php echo $producto['numero_de_parte']; ?>">
                         </div>
 
                         <!-- Nombre del producto -->
                         <div>
-                            <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
+                            <label class="block text-sm font-medium text-custom-gray dark:text-custom-silver mb-1">
                                 Nombre del producto
                             </label>
                             <input type="text" name="nombre_producto"
-                                class="w-full px-4 py-2 rounded-md border border-gray-300 dark:border-gray-600
-                                    dark:bg-gray-700 dark:text-white focus:ring-2 focus:ring-custom-blue"
+                                class="w-full px-4 py-2 rounded-md border border-custom-gray dark:border-custom-gray
+                                    dark:bg-custom-gray dark:text-custom-silverLight focus:ring-2 focus:ring-custom-red"
                                 value="<?php echo $producto['nombre_producto']; ?>">
                         </div>
 
                         <!-- Precio -->
                         <div>
-                            <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
+                            <label class="block text-sm font-medium text-custom-gray dark:text-custom-silver mb-1">
                                 Precio ($)
                             </label>
                             <input type="number" name="precio_producto"
-                                class="w-full px-4 py-2 rounded-md border border-gray-300 dark:border-gray-600
-                                    dark:bg-gray-700 dark:text-white focus:ring-2 focus:ring-custom-blue"
+                                class="w-full px-4 py-2 rounded-md border border-custom-gray dark:border-custom-gray
+                                    dark:bg-custom-gray dark:text-custom-silverLight focus:ring-2 focus:ring-custom-red"
                                 value="<?php echo $producto['precio_producto']; ?>" step="0.01">
                         </div>
 
                         <!-- Categoría -->
                         <div>
-                            <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
+                            <label class="block text-sm font-medium text-custom-gray dark:text-custom-silver mb-1">
                                 Categoría
                             </label>
-                            <select name="categoria_producto" class="w-full px-4 py-2 rounded-md border border-gray-300 dark:border-gray-600
-                                    dark:bg-gray-700 dark:text-white focus:ring-2 focus:ring-custom-blue">
+                            <select name="categoria_producto" class="w-full px-4 py-2 rounded-md border border-custom-gray dark:border-custom-gray
+                                    dark:bg-custom-gray dark:text-custom-silverLight focus:ring-2 focus:ring-custom-red">
                                 <option <?php if ($producto['categoria_producto'] == 'Frenos') echo 'selected'; ?>>Frenos</option>
                                 <option <?php if ($producto['categoria_producto'] == 'Suspensión') echo 'selected'; ?>>Suspensión</option>
                                 <option <?php if ($producto['categoria_producto'] == 'Motor') echo 'selected'; ?>>Motor</option>
@@ -163,11 +163,11 @@ if (isset($_GET['numero_de_parte'])) {
 
                         <!-- Marca -->
                         <div>
-                            <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
+                            <label class="block text-sm font-medium text-custom-gray dark:text-custom-silver mb-1">
                                 Marca
                             </label>
-                            <select name="marca_producto" class="w-full px-4 py-2 rounded-md border border-gray-300 dark:border-gray-600
-                                    dark:bg-gray-700 dark:text-white focus:ring-2 focus:ring-custom-blue">
+                            <select name="marca_producto" class="w-full px-4 py-2 rounded-md border border-custom-gray dark:border-custom-gray
+                                        dark:bg-custom-gray dark:text-custom-silverLight focus:ring-2 focus:ring-custom-red">
                                 <option <?php if ($producto['marca_producto'] == 'Toyota') echo 'selected'; ?>>Toyota</option>
                                 <option <?php if ($producto['marca_producto'] == 'Honda') echo 'selected'; ?>>Honda</option>
                                 <option <?php if ($producto['marca_producto'] == 'Chevrolet') echo 'selected'; ?>>Chevrolet</option>
@@ -178,12 +178,12 @@ if (isset($_GET['numero_de_parte'])) {
 
                         <!-- Stock -->
                         <div>
-                            <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
+                            <label class="block text-sm font-medium text-custom-gray dark:text-custom-silver mb-1">
                                 Stock disponible
                             </label>
                             <input type="number" name="stock_producto"
-                                class="w-full px-4 py-2 rounded-md border border-gray-300 dark:border-gray-600
-                                    dark:bg-gray-700 dark:text-white focus:ring-2 focus:ring-custom-blue"
+                                class="w-full px-4 py-2 rounded-md border border-custom-gray dark:border-custom-gray
+                                        dark:bg-custom-gray dark:text-custom-silverLight focus:ring-2 focus:ring-custom-red"
                                 value="<?php echo $producto['stock_producto']; ?>">
                         </div>
 
@@ -191,12 +191,12 @@ if (isset($_GET['numero_de_parte'])) {
 
                     <!-- Descripción -->
                     <div>
-                        <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
+                        <label class="block text-sm font-medium text-custom-gray dark:text-custom-silver mb-1">
                             Descripción del producto
                         </label>
                         <textarea name="descripcion_producto"
-                            class="w-full px-4 py-2 rounded-md border border-gray-300 dark:border-gray-600
-                                dark:bg-gray-700 dark:text-white focus:ring-2 focus:ring-custom-blue"
+                            class="w-full px-4 py-2 rounded-md border border-custom-gray dark:border-custom-gray
+                                        dark:bg-custom-gray dark:text-custom-silverLight focus:ring-2 focus:ring-custom-red"
                             rows="4"><?php echo $producto['descripcion_producto']; ?></textarea>
                     </div>
 
@@ -205,13 +205,13 @@ if (isset($_GET['numero_de_parte'])) {
                 <!-- Botones de acción -->
                 <div class="mt-6 flex justify-end space-x-4">
                     <button onclick="history.back()" type="button" 
-                        class="px-4 py-2 border border-gray-300 rounded-md text-gray-700 dark:text-gray-300
-                            hover:bg-gray-50 dark:hover:bg-gray-700">
+                        class="px-4 py-2 bg-custom-orange hover:bg-custom-wineDark dark:bg-custom-orange
+                        dark:hover:bg-custom-red text-custom-silver rounded-md transition-colors duration-200">
                         Cancelar
                     </button>
                     <button type="submit" 
-                        class="px-4 py-2 bg-custom-blue hover:bg-custom-blue-light text-white rounded-md
-                            transition-colors duration-200">
+                        class="px-4 py-2 bg-custom-orange hover:bg-custom-wineDark dark:bg-custom-orange
+                        dark:hover:bg-custom-red text-custom-silver rounded-md transition-colors duration-200">
                         Guardar Cambios
                     </button>
                 </div>
@@ -223,7 +223,7 @@ if (isset($_GET['numero_de_parte'])) {
     <footer class="bg-custom-steelDark dark:bg-custom-black text-white text-center py-4 fixed bottom-0 w-full text-sm">
         <p>&copy; 2025 Autorepuestos TirameAlgo, C.A. - Todos los derechos reservados</p>
     </footer>
-
+    <script>
         document.addEventListener('DOMContentLoaded', function() {
 
             const errorMessage = "<?php echo isset($_GET['error_message']) ? urldecode($_GET['error_message']) : ''; ?>";
@@ -234,5 +234,6 @@ if (isset($_GET['numero_de_parte'])) {
 
         });
     </script>
+        
 </body>
 </html>

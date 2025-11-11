@@ -86,7 +86,7 @@ if($stock_producto != (int)$stock_producto){
 
 
 if ($flag) {
-    $conexion = new mysqli('localhost', 'root', '', 'repuestos_johbri');
+    $conexion = new mysqli('localhost', 'root', '', 'repuestos_tiramealgo');
     if ($conexion->connect_error) {
         die("Error de conexión: " . $conexion->connect_error);
     }

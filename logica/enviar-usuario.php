@@ -29,12 +29,12 @@ try {
     $mail->isSMTP();
     $mail->Host = 'smtp.gmail.com';
     $mail->SMTPAuth = true;
-    $mail->Username = 'johbrirepuestos@gmail.com';
+    $mail->Username = 'tiramealgo_admin@gmail.com';
     $mail->Password = 'sdvw pmjg pnjm igpm';
     $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
     $mail->Port = 587;
 
-    $mail->setFrom('johbrirepuestos@gmail.com', 'Johbri Repuestos');
+    $mail->setFrom('tiramealgo_admin@gmail.com', 'TirameAlgo Repuestos');
     $mail->addAddress($correo_empresa, $nombre_empresa);
 
     $mail->isHTML(true);
@@ -83,7 +83,7 @@ try {
             </div>
             <div class="footer">
                 <p>Este es un mensaje automático, por favor no respondas a este correo.</p>
-                <p>&copy; 2025 Johbri Repuestos</p>
+                <p>&copy; 2025 TirameAlgo Repuestos</p>
             </div>
         </div>
     </body>

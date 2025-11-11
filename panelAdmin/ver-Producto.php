@@ -119,15 +119,15 @@ $success_message = isset($_GET['success_message']) ? $_GET['success_message'] : 
         <div class="bg-custom-silverLight dark:bg-custom-steelDark rounded-lg shadow-md p-6 mb-6">
             <form method="GET" action="ver-Producto.php" class="flex flex-col sm:flex-row gap-4 items-end">
                 <div class="w-full sm:w-1/3">
-                    <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
+                    <label class="block text-sm font-medium text-custom-black dark:text-custom-silver mb-1">
                         Buscar producto
                     </label>
                     <input
                         type="text"
                         name="search"
                         placeholder="Nombre del producto..."
-                        class="w-full px-4 py-2 rounded-md border border-gray-300 dark:border-gray-600
-                            dark:bg-gray-700 dark:text-white focus:ring-2 focus:ring-custom-blue"
+                        class="w-full px-4 py-2 rounded-md border border-custom-gray dark:border-custom-gray
+                            dark:bg-custom-gray dark:text-custom-silverLight focus:ring-2 focus:ring-custom-red"
                         value="<?php echo htmlspecialchars($search_query); ?>"
                     >
                 </div>
@@ -137,8 +137,8 @@ $success_message = isset($_GET['success_message']) ? $_GET['success_message'] : 
                 </button>
 
                 <?php if (!empty($search_query)): ?>
-                    <a href="ver-Producto.php" class="w-full sm:w-auto px-4 py-2 bg-gray-500 hover:bg-gray-600 dark:bg-gray-600
-                        dark:hover:bg-gray-700 text-white rounded-md transition-colors duration-200 text-center">
+                    <a href="ver-Producto.php" class="w-full sm:w-auto px-4 py-2 bg-custom-orange hover:bg-custom-wineDark dark:bg-custom-orange
+                        dark:hover:bg-custom-red text-custom-silver rounded-md transition-colors duration-200">
                     Cancelar
                     </a>
                 <?php endif; ?>
@@ -148,7 +148,7 @@ $success_message = isset($_GET['success_message']) ? $_GET['success_message'] : 
         <!-- Lista de Productos Sin Stock -->
         <div class="bg-custom-silverLight dark:bg-custom-steelDark rounded-lg shadow-md overflow-hidden mb-6">
             <button onclick="toggleSinStock()"
-                    class="w-full px-6 py-4 flex justify-between items-center text-left text-gray-900 dark:text-white hover:bg-gray-50 dark:hover:bg-gray-700">
+                    class="w-full px-6 py-4 flex justify-between items-center text-left text-custom-black dark:text-custom-silver hover:bg-custom-silverTitan dark:hover:bg-custom-gray">
                 <div class="flex items-center">
                     <span class="text-lg font-semibold">Productos Agotados</span>
                 </div>
@@ -159,18 +159,18 @@ $success_message = isset($_GET['success_message']) ? $_GET['success_message'] : 
 
             <div id="lista-sin-stock">
                 <div class="overflow-x-auto">
-                    <table class="min-w-full divide-y divide-gray-200 dark:divide-gray-700">
-                        <thead class="bg-gray-50 dark:bg-gray-700">
+                    <table class="min-w-full divide-y divide-custom-silverTitan dark:divide-custom-gray">
+                        <thead class="bg-custom-gray-50 dark:bg-custom-gray">
                             <tr>
-                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">Producto</th>
-                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">Categoría</th>
-                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">Precio</th>
-                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">Stock</th>
-                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">Estado</th>
-                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider"></th>
+                                <th class="px-6 py-3 text-left text-xs font-medium text-custom-gray dark:text-custom-silverLight uppercase tracking-wider">Categoría</th>
+                                <th class="px-6 py-3 text-left text-xs font-medium text-custom-gray dark:text-custom-silverLight uppercase tracking-wider">Precio</th>
+                                <th class="px-6 py-3 text-left text-xs font-medium text-custom-gray dark:text-custom-silverLight uppercase tracking-wider">Stock</th>
+                                <th class="px-6 py-3 text-left text-xs font-medium text-custom-gray dark:text-custom-silverLight uppercase tracking-wider">Estado</th>
+                                <th class="px-6 py-3 text-left text-xs font-medium text-custom-gray dark:text-custom-silverLight uppercase tracking-wider"></th>
+                                <th class="px-6 py-3 text-left text-xs font-medium text-custom-gray dark:text-custom-silverLight uppercase tracking-wider">Producto</th>
                             </tr>
                         </thead>
-                        <tbody class="bg-white dark:bg-gray-800 divide-y divide-gray-200 dark:divide-gray-700" id="lista-sin-stock">
+                        <tbody class="bg-custom-silverLght dark:bg-custom-silverTitan divide-y divide-custom-silverTitan dark:divide-custom-gray" id="lista-sin-stock">
 
                         <?php
                                     $sql_2 = "SELECT * FROM productos WHERE stock_producto = 0 ORDER BY nombre_producto ASC;";
@@ -244,18 +244,18 @@ $success_message = isset($_GET['success_message']) ? $_GET['success_message'] : 
                 <h2 class="text-lg font-semibold text-gray-900 dark:text-white">Productos Disponibles</h2>
             </div>
             <div class="overflow-x-auto">
-                <table class="min-w-full divide-y divide-gray-200 dark:divide-gray-700">
-                    <thead class="bg-gray-50 dark:bg-gray-700">
+                <table class="min-w-full divide-y divide-custom-silverTitan dark:divide-custom-gray">
+                    <thead class="bg-custom-gray-50 dark:bg-custom-gray">
                         <tr>
-                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">Producto</th>
-                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">Categoría</th>
-                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">Precio</th>
-                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">Stock</th>
-                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">Estado</th>
-                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider"></th>
+                            <th class="px-6 py-3 text-left text-xs font-medium text-custom-gray dark:text-custom-silverLight uppercase tracking-wider">Producto</th>
+                            <th class="px-6 py-3 text-left text-xs font-medium text-custom-gray dark:text-custom-silverLight uppercase tracking-wider">Categoría</th>
+                            <th class="px-6 py-3 text-left text-xs font-medium text-custom-gray dark:text-custom-silverLight uppercase tracking-wider">Precio</th>
+                            <th class="px-6 py-3 text-left text-xs font-medium text-custom-gray dark:text-custom-silverLight uppercase tracking-wider">Stock</th>
+                            <th class="px-6 py-3 text-left text-xs font-medium text-custom-gray dark:text-custom-silverLight uppercase tracking-wider">Estado</th>
+                            <th class="px-6 py-3 text-left text-xs font-medium text-custom-gray dark:text-custom-silverLight uppercase tracking-wider"></th>
                         </tr>
                     </thead>
-                    <tbody class="bg-white dark:bg-gray-800 divide-y divide-gray-200 dark:divide-gray-700">
+                    <tbody class="bg-custom-silverLight dark:bg-custom-steelDark divide-y divide-custom-silverTitan dark:divide-custom-gray">
                         <?php
 
                         if ($result->num_rows > 0) {

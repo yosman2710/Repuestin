@@ -152,14 +152,14 @@ if ($cliente_id > 0) {
         <div class="max-w-4xl mx-auto">
             <!-- Encabezado -->
             <div class="mb-6">
-                <h1 class="text-2xl font-bold text-gray-900 dark:text-white">Editar Cliente</h1>
+                <h1 class="text-2xl font-bold text-custom-black dark:text-custom-silverLight">Editar Cliente</h1>
                 <p class="text-gray-600 dark:text-gray-400">Modifique los campos necesarios para actualizar la información del cliente empresarial</p>
             </div>
 
-            <form action="../logica/actualizar-clientes.php" method="POST" class="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6" novalidate>
+            <form action="../logica/actualizar-clientes.php" method="POST" class="bg-custom-silverLight dark:bg-custom-steelDark rounded-lg shadow-md p-6" novalidate>
                 <input type="hidden" name="id" value="<?php echo htmlspecialchars($cliente['id']); ?>">
                 <div class="space-y-6">
-                    <h2 class="text-lg font-semibold text-gray-900 dark:text-white border-b border-gray-200 dark:border-gray-700 pb-2">
+                    <h2 class="text-lg font-semibold text-custom-black dark:text-custom-silverLight border-b border-gray-200 dark:border-gray-700 pb-2">
                         Información de la Empresa
                     </h2>
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -171,8 +171,8 @@ if ($cliente_id > 0) {
                                 id="nombre_empresa"
                                 name="nombre_empresa"
                                 value="<?php echo htmlspecialchars($cliente['nombre_empresa']); ?>"
-                                class="w-full px-4 py-2 rounded-md border border-gray-300 dark:border-gray-600
-                                dark:bg-gray-700 dark:text-white focus:ring-2 focus:ring-custom-blue">
+                                class="w-full px-4 py-2 rounded-md border border-custom-gray dark:border-custom-gray
+                                    dark:bg-custom-gray dark:text-custom-silverLight focus:ring-2 focus:ring-custom-re">
                         </div>
 
                         <!-- RIF -->
@@ -185,8 +185,8 @@ if ($cliente_id > 0) {
                                 name="rif"
                                 value="<?php echo htmlspecialchars($cliente['rif']); ?>"
                                 placeholder="J-12345678-9"
-                                class="w-full px-4 py-2 rounded-md border border-gray-300 dark:border-gray-600
-                                dark:bg-gray-700 dark:text-white focus:ring-2 focus:ring-custom-blue">
+                                class="w-full px-4 py-2 rounded-md border border-custom-gray dark:border-custom-gray
+                                    dark:bg-custom-gray dark:text-custom-silverLight focus:ring-2 focus:ring-custom-red">
                         </div>
                         <div>
                             <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
@@ -197,8 +197,8 @@ if ($cliente_id > 0) {
                                 name="telefono_empresa"
                                 value="<?php echo htmlspecialchars($cliente['telefono_empresa']); ?>"
                                 placeholder="0212-1234567"
-                                class="w-full px-4 py-2 rounded-md border border-gray-300 dark:border-gray-600
-                                dark:bg-gray-700 dark:text-white focus:ring-2 focus:ring-custom-blue">
+                                class= "w-full px-4 py-2 rounded-md border border-custom-gray dark:border-custom-gray
+                                    dark:bg-custom-gray dark:text-custom-silverLight focus:ring-2 focus:ring-custom-red">
                         </div>
                     </div>
 
@@ -209,12 +209,12 @@ if ($cliente_id > 0) {
                         </label>
                         <textarea required name="direccion" id="direccion"
                                 rows="2"
-                                class="w-full px-4 py-2 rounded-md border border-gray-300 dark:border-gray-600
-                                dark:bg-gray-700 dark:text-white focus:ring-2 focus:ring-custom-blue"><?php echo htmlspecialchars($cliente['direccion']); ?></textarea>
+                                class="w-full px-4 py-2 rounded-md border border-custom-gray dark:border-custom-gray
+                                    dark:bg-custom-gray dark:text-custom-silverLight focus:ring-2 focus:ring-custom-red"><?php echo htmlspecialchars($cliente['direccion']); ?></textarea>
                     </div>
 
                     <!-- Información del Contacto -->
-                    <h2 class="text-lg font-semibold text-gray-900 dark:text-white border-b border-gray-200 dark:border-gray-700 pb-2 mt-8">
+                    <h2 class="text-lg font-semibold text-custom-black dark:text-custom-silverLight border-b border-gray-200 dark:border-gray-700 pb-2 mt-8">
                         Información del Contacto Principal
                     </h2>
 
@@ -226,8 +226,8 @@ if ($cliente_id > 0) {
                             </label>
                             <input type="text" required name="nombre_contacto" id="nombre_contacto"
                                 value="<?php echo htmlspecialchars($cliente['nombre_encargado']); ?>"
-                                class="w-full px-4 py-2 rounded-md border border-gray-300 dark:border-gray-600
-                                dark:bg-gray-700 dark:text-white focus:ring-2 focus:ring-custom-blue">
+                                class="w-full px-4 py-2 rounded-md border border-custom-gray dark:border-custom-gray
+                                    dark:bg-custom-gray dark:text-custom-silverLight focus:ring-2 focus:ring-custom-red">
                         </div>
 
                         <!-- Cédula del Contacto -->
@@ -238,8 +238,8 @@ if ($cliente_id > 0) {
                             <input type="text" required name="cedula_encargado" id="cedula_encargado"
                                 value="<?php echo htmlspecialchars($cliente['cedula_encargado']); ?>"
                                 placeholder="V-12345678"
-                                class="w-full px-4 py-2 rounded-md border border-gray-300 dark:border-gray-600
-                                dark:bg-gray-700 dark:text-white focus:ring-2 focus:ring-custom-blue">
+                                class="w-full px-4 py-2 rounded-md border border-custom-gray dark:border-custom-gray
+                                    dark:bg-custom-gray dark:text-custom-silverLight focus:ring-2 focus:ring-custom-red">
                         </div>
 
                         <!-- Teléfono del Contacto -->
@@ -250,13 +250,13 @@ if ($cliente_id > 0) {
                             <input type="tel" required name="telefono_encargado" id="telefono_encargado"
                                 value="<?php echo htmlspecialchars($cliente['telefono_encargado']); ?>"
                                 placeholder="0414-1234567"
-                                class="w-full px-4 py-2 rounded-md border border-gray-300 dark:border-gray-600
-                                dark:bg-gray-700 dark:text-white focus:ring-2 focus:ring-custom-blue">
+                                class="w-full px-4 py-2 rounded-md border border-custom-gray dark:border-custom-gray
+                                    dark:bg-custom-gray dark:text-custom-silverLight focus:ring-2 focus:ring-custom-red">
                         </div>
                     </div>
 
                     <!-- Información de Acceso -->
-                    <h2 class="text-lg font-semibold text-gray-900 dark:text-white border-b border-gray-200 dark:border-gray-700 pb-2 mt-8">
+                    <h2 class="text-lg font-semibold text-custom-black dark:text-custom-silverLight border-b border-gray-200 dark:border-gray-700 pb-2 mt-8">
                         Información de Acceso al Sistema
                     </h2>
 
@@ -268,8 +268,8 @@ if ($cliente_id > 0) {
                             </label>
                             <input type="email" required name="correo_empresa" id="correo_empresa"
                                 value="<?php echo htmlspecialchars($cliente['correo']); ?>"
-                                class="w-full px-4 py-2 rounded-md border border-gray-300 dark:border-gray-600
-                                dark:bg-gray-700 dark:text-white focus:ring-2 focus:ring-custom-blue">
+                                class="w-full px-4 py-2 rounded-md border border-custom-gray dark:border-custom-gray
+                                    dark:bg-custom-gray dark:text-custom-silverLight focus:ring-2 focus:ring-custom-red">
                         </div>
 
                         <!-- Contraseña -->
@@ -282,8 +282,8 @@ if ($cliente_id > 0) {
                                     id="password"
                                     name="password"
                                     value="<?php echo htmlspecialchars($cliente['contrasena']); ?>"
-                                    class="w-full px-4 py-2 pr-10 rounded-md border border-gray-300 dark:border-gray-600
-                                    dark:bg-gray-700 dark:text-white focus:ring-2 focus:ring-custom-blue">
+                                    class="w-full px-4 py-2 rounded-md border border-custom-gray dark:border-custom-gray
+                                    dark:bg-custom-gray dark:text-custom-silverLight focus:ring-2 focus:ring-custom-red">
                                 <button type="button"
                                         onclick="togglePassword()"
                                         class="absolute inset-y-0 right-0 pr-3 flex items-center">
@@ -315,13 +315,13 @@ if ($cliente_id > 0) {
                 <!-- Botones de acción -->
                 <div class="mt-8 flex justify-end space-x-4">
                     <button onclick="history.back()" type="button"
-                            class="px-4 py-2 border border-gray-300 rounded-md text-gray-700 dark:text-gray-300
-                            hover:bg-gray-50 dark:hover:bg-gray-700">
+                            class="px-4 py-2 bg-custom-orange hover:bg-custom-wineDark dark:bg-custom-orange
+                                dark:hover:bg-custom-red text-custom-silver rounded-md transition-colors duration-200">
                         Cancelar
                     </button>
                     <button type="submit"
-                            class="px-4 py-2 bg-custom-blue hover:bg-custom-blue-light text-white rounded-md
-                            transition-colors duration-200">
+                            class="px-4 py-2 bg-custom-orange hover:bg-custom-wineDark dark:bg-custom-orange
+                                dark:hover:bg-custom-red text-custom-silver rounded-md transition-colors duration-200">
                         Actualizar Cliente
                     </button>
                 </div>

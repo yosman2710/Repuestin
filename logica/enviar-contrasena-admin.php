@@ -10,7 +10,7 @@ use PHPMailer\PHPMailer\SMTP;
 $servername = "localhost";
 $username = "root";
 $password = "";
-$dbname = "repuestos_johbri";
+$dbname = "repuestos_tiramealgo";
 
 $conn = new mysqli($servername, $username, $password, $dbname);
 
@@ -50,12 +50,12 @@ if ($result->num_rows > 0) {
         $mail->isSMTP();
         $mail->Host = 'smtp.gmail.com';
         $mail->SMTPAuth = true;
-        $mail->Username = 'johbrirepuestos@gmail.com';
+        $mail->Username = 'tiramealgo_admin@gmail.com';
         $mail->Password = 'sdvw pmjg pnjm igpm';
         $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
         $mail->Port = 587;
 
-        $mail->setFrom('johbrirepuestos@gmail.com', 'Johbri Repuestos');
+        $mail->setFrom('tiramealgo_admin@gmail.com', 'Tiramealgo Repuestos');
         $mail->addAddress($correo_empresa, $nombre_empresa);
 
         $mail->isHTML(true);
@@ -106,7 +106,7 @@ if ($result->num_rows > 0) {
                 </div>
                 <div class="footer">
                     <p>Este es un mensaje automático, por favor no respondas a este correo.</p>
-                    <p>&copy; 2025 Johbri Repuestos</p>
+                    <p>&copy; 2025 TirameAlgo Repuestos</p>
                 </div>
             </div>
         </body>

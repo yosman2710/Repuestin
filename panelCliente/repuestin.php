@@ -200,7 +200,7 @@ if (isset($conn)) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Repuestin</title>
-    <link rel="shortcut icon" href="./LOGO-VENTANA.png" type="image/x-icon">
+    <link rel="shortcut icon" href="./Repuestin.png" type="image/x-icon">
     <link rel="stylesheet" href="../css/global_style.css"> 
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="../js/tailwind_config.js"></script>
@@ -306,14 +306,14 @@ if (isset($conn)) {
 
     <main class="min-h-screen flex flex-col items-center justify-center px-4 pt-16">
         <div class="bg-custom-silverLight dark:bg-custom-steelDark p-10 rounded-lg custom-shadow max-w-2xl w-full relative">
-            <div class="emoji-container" id="emoji-container">😇</div>
+            <div class="emoji-container" id="emoji-container"></div>
             <div id="chatbox" class="h-80 mb-4 p-4 flex flex-col space-y-2">
                 <?php
                 // Recargar el historial al cargar la página (opcional, pero útil)
                 if (isset($_SESSION['historial']) && is_array($_SESSION['historial'])) {
                     foreach ($_SESSION['historial'] as $interaccion) {
-                        $clase_usuario = 'bg-blue-500 text-white self-end text-right';
-                        $clase_bot = 'bg-gray-300 dark:bg-gray-700 text-gray-800 dark:text-white self-start text-left';
+                        $clase_usuario = 'bg-custom-orange text-custom-silverLight self-end text-right';
+                        $clase_bot = 'bg-custom-gray dark:bg-custom-gray text-custom-silverLight dark:text-silverLight self-start text-left';
 
                         // Mensaje del usuario
                         echo "<div class='rounded-lg p-2 mb-2 max-w-xs {$clase_usuario}'>{$interaccion['usuario']}</div>";
@@ -324,7 +324,7 @@ if (isset($conn)) {
                 }
                 ?>
             </div>
-            <input type="text" id="userInput" placeholder="Escribe tu mensaje..." class="w-full border border-gray-300 dark:border-gray-600 rounded-lg px-4 py-2 focus:outline-none focus:border-custom-blue dark:focus:border-blue-500 dark:bg-custom-gray dark:text-white">
+            <input type="text" id="userInput" placeholder="Escribe tu mensaje..." class="w-full border border-custom-wineDeep dark:border-custom-wineDeep rounded-lg px-4 py-2 focus:outline-none focus:border-custom-red dark:focus:border-custom-red dark:bg-custom-gray dark:text-custom-silverLight">
             <button id="sendButton" class="w-full bg-custom-orange hover:bg-custom-wineDark dark:bg-custom-orange
                         dark:hover:bg-custom-red text-custom-silver py-2 px-4 rounded-md transition-colors duration-200 font-semibold mt-2">
                 Enviar
@@ -481,16 +481,8 @@ if (isset($conn)) {
             // Mostrar mensaje del usuario
             const userMessageElement = document.createElement('div');
             userMessageElement.textContent = userMessage;
-            userMessageElement.classList.add('bg-blue-500', 'text-white', 'rounded-lg', 'p-2', 'mb-2', 'max-w-xs', 'self-end', 'text-right');
+            userMessageElement.classList.add('bg-custom-orange', 'text-custom-silverLight', 'rounded-lg', 'p-2', 'mb-2', 'max-w-xs', 'self-end', 'text-right');
             chatbox.appendChild(userMessageElement);
-
-            // Animación del emoji
-            emojiContainer.classList.add('left');
-            emojiContainer.textContent = '😈';
-            setTimeout(() => {
-                emojiContainer.classList.remove('left');
-                emojiContainer.textContent = '😇';
-            }, 3000);
 
             // Mostrar indicador de escritura del bot
             const typingIndicator = document.createElement('div');
@@ -524,9 +516,9 @@ if (isset($conn)) {
                     // Clases dinámicas para dark mode
                     const botClasses = ['rounded-lg', 'p-2', 'mb-2', 'max-w-xs', 'self-start', 'text-left'];
                     if (document.documentElement.classList.contains('dark')) {
-                        botClasses.push('bg-gray-700', 'text-white');
+                        botClasses.push('bg-custom-gray', 'text-custom-silverLight');
                     } else {
-                        botClasses.push('bg-gray-300', 'text-gray-800');
+                        botClasses.push('bg-custom-gray', 'text-custom-silverLight');
                     }
                     botMessageElement.classList.add(...botClasses);
                     chatbox.appendChild(botMessageElement);

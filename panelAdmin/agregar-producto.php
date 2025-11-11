@@ -124,57 +124,57 @@ $success_message = isset($_GET['success_message']) ? $_GET['success_message'] : 
 
     <!-- Contenido Principal -->
     <main class="pt-24 px-6 pb-20">
-        <div class="max-w-4xl mx-auto">
+        <div class="max-w-4xl mx-auto ">
             <div class="mb-6">
-                <h1 class="text-2xl font-bold text-gray-900 dark:text-white">Agregar Nuevo Producto</h1>
-                <p class="text-gray-600 dark:text-gray-400">Complete todos los campos para registrar un nuevo producto</p>
+                <h1 class="text-2xl font-bold text-custom-black dark:text-custom-silverLight">Agregar Nuevo Producto</h1>
+                <p class="text-custom-gray dark:text-custom-silver">Complete todos los campos para registrar un nuevo producto</p>
             </div>
 
             <form action="../logica/agregar.php" method="POST" enctype = "multipart/form-data" class="bg-custom-silverLight dark:bg-custom-steelDark rounded-lg shadow-md p-6">
                 <!-- Información Básica -->
                 <div class="space-y-6">
-                    <h2 class="text-lg font-semibold text-gray-900 dark:text-white border-b border-gray-200 dark:border-gray-700 pb-2">
+                    <h2 class="text-lg font-semibold text-gray-900 dark:text-custom-silverLight border-b border-gray-200 dark:border-gray-700 pb-2">
                         Información Básica
                     </h2>
 
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
 
                         <div>
-                            <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
+                            <label class="block text-sm font-medium text-custom-gray dark:text-custom-silver mb-1">
                                 Código Único del Repuestos *
                             </label>
                             <div class="relative">
                                 <input type="text" required
                                     name = "num_parte"
                                     id = "num_parte"
-                                    placeholder="Ingrese el codigo único"
-                                    class="w-full px-4 py-2 rounded-md border border-gray-300 dark:border-gray-600
-                                        dark:bg-gray-700 dark:text-white focus:ring-2 focus:ring-custom-blue">
+                                    placeholder=""
+                                    class="w-full px-4 py-2 rounded-md border border-custom-gray dark:border-custom-gray
+                                        dark:bg-custom-gray dark:text-custom-silverLight focus:ring-2 focus:ring-custom-red">
                             </div>
                         </div>
 
                         <!-- Nombre del Producto -->
                         <div>
-                            <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
+                            <label class="block text-sm font-medium text-custom-gray dark:text-custom-silver mb-1">
                                 Nombre del Producto *
                             </label>
                             <input type="text" required
                             id = "nombre_producto"
                             name = "nombre_producto"
-                            class="w-full px-4 py-2 rounded-md border border-gray-300 dark:border-gray-600
-                                    dark:bg-gray-700 dark:text-white focus:ring-2 focus:ring-custom-blue">
+                            class="w-full px-4 py-2 rounded-md border border-custom-gray dark:border-custom-gray
+                                dark:bg-custom-gray dark:text-custom-silverLight focus:ring-2 focus:ring-custom-red">
                         </div>
 
                         <!-- Categoría -->
                         <div>
-                            <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
+                            <label class="block text-sm font-medium text-custom-gray dark:text-custom-silver mb-1">
                                 Categoría *
                             </label>
                             <select required
                                 name = "categoria"
                                 id = "categoria"
-                                class="w-full px-4 py-2 rounded-md border border-gray-300 dark:border-gray-600
-                                    dark:bg-gray-700 dark:text-white focus:ring-2 focus:ring-custom-blue">
+                                class="w-full px-4 py-2 rounded-md border border-custom-gray dark:border-custom-gray
+                                    dark:bg-custom-gray dark:text-custom-silverLight focus:ring-2 focus:ring-custom-red">
                                 <option value="">Seleccione una categoría</option>
                                 <option>Frenos</option>
                                 <option>Inyección</option>
@@ -192,14 +192,14 @@ $success_message = isset($_GET['success_message']) ? $_GET['success_message'] : 
 
                         <!-- Marca -->
                         <div>
-                            <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
+                            <label class="block text-sm font-medium text-custom-gray dark:text-custom-silver mb-1">
                                 Marca *
                             </label>
                             <select required
                                 name = "marca"
                                 id = "marca"
-                                class="w-full px-4 py-2 rounded-md border border-gray-300 dark:border-gray-600
-                                    dark:bg-gray-700 dark:text-white focus:ring-2 focus:ring-custom-blue">
+                                class="w-full px-4 py-2 rounded-md border border-custom-gray dark:border-custom-gray
+                                    dark:bg-custom-gray dark:text-custom-silverLight focus:ring-2 focus:ring-custom-red">
                                 <option value="">Seleccione una marca</option>
                                 <option>Honda</option>
                                 <option>Fiat</option>
@@ -220,47 +220,47 @@ $success_message = isset($_GET['success_message']) ? $_GET['success_message'] : 
 
                         <!-- Precio -->
                         <div>
-                            <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
+                            <label class="block text-sm font-medium text-custom-gray dark:text-custom-silver mb-1">
                                 Precio *
                             </label>
                             <div class="relative">
-                                <span class="absolute inset-y-0 left-0 pl-3 flex items-center text-gray-500 dark:text-gray-400">
+                                <span class="absolute inset-y-0 left-0 pl-3 flex items-center text-custom-black dark:text-custom-silverLight">
                                     $
                                 </span>
                                 <input type="number" required
                                     name = "precio"
                                     id = "precio"
                                     step="0.01" min="0"
-                                    placeholder="0.00"
-                                    class="w-full pl-8 pr-4 py-2 rounded-md border border-gray-300 dark:border-gray-600
-                                        dark:bg-gray-700 dark:text-white focus:ring-2 focus:ring-custom-blue">
+                                    placeholder=""
+                                    class="w-full px-4 py-2 rounded-md border border-custom-gray dark:border-custom-gray
+                                        dark:bg-custom-gray dark:text-custom-silverLight focus:ring-2 focus:ring-custom-red">
                             </div>
                         </div>
 
                         <!-- Stock -->
                         <div>
-                            <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
+                            <label class="block text-sm font-medium text-custom-gray dark:text-custom-silver mb-1">
                                 Stock Inicial *
                             </label>
                             <input type="number" required
                                 name = "stock"
                                 id = "stock"
                                 min="0"
-                                class="w-full px-4 py-2 rounded-md border border-gray-300 dark:border-gray-600
-                                    dark:bg-gray-700 dark:text-white focus:ring-2 focus:ring-custom-blue">
+                                class="w-full px-4 py-2 rounded-md border border-custom-gray dark:border-custom-gray
+                                    dark:bg-custom-gray dark:text-custom-silverLight focus:ring-2 focus:ring-custom-red">
                         </div>
                     </div>
 
                     <!-- Descripción -->
                     <div>
-                        <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
+                        <label class="block text-sm font-medium text-custom-gray dark:text-custom-silver mb-1">
                             Descripción
                         </label>
                         <textarea rows="4"
                             name = "descripcion"
                             id = "descripcion"
-                            class="w-full px-4 py-2 rounded-md border border-gray-300 dark:border-gray-600
-                                dark:bg-gray-700 dark:text-white focus:ring-2 focus:ring-custom-blue"></textarea>
+                            class="w-full px-4 py-2 rounded-md border border-custom-gray dark:border-custom-gray
+                                dark:bg-custom-gray dark:text-custom-silverLight focus:ring-2 focus:ring-custom-red"></textarea>
                     </div>
 
 <!-- Contenedor de imágenes -->
@@ -376,13 +376,13 @@ $success_message = isset($_GET['success_message']) ? $_GET['success_message'] : 
                 <div class="mt-8 flex justify-end space-x-4">
                     <div id="errores" class="text-red-500 text-sm mr-auto"></div>
                     <button onclick="history.back()" type="button"
-                            class="px-4 py-2 border border-gray-300 rounded-md text-gray-700 dark:text-gray-300
-                            hover:bg-gray-50 dark:hover:bg-gray-700">
+                            class="px-4 py-2 border border-gray-300 rounded-md text-custom-gray dark:text-gray-300
+                            hover:bg-custom-gray dark:hover:bg-custom-wineDeep">
                         Cancelar
                     </button>
                     <button type="submit"
                         onclick="return validarFormulario(event)"
-                        class="px-4 py-2 bg-custom-blue hover:bg-custom-blue-light text-white rounded-md
+                        class="px-4 py-2 bg-custom-orange hover:bg-custom-wineDeep text-custom-silver dark:text-custom-silver rounded-md
                             transition-colors duration-200">
                         Guardar Producto
                     </button>
