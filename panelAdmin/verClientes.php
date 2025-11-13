@@ -112,15 +112,15 @@ if ($result->num_rows > 0) {
               type="text"
               name="search"
               placeholder="Nombre de la empresa"
-              class="w-full px-4 py-2 rounded-md border border-gray-300 dark:border-gray-600
-                  dark:bg-gray-700 dark:text-white focus:ring-2 focus:ring-custom-blue">
+              class="w-full px-4 py-2 rounded-md border border-custom-gray dark:border-custom-gray
+                    dark:bg-custom-gray dark:text-custom-silverLight focus:ring-2 focus:ring-custom-red">
           </div>
         <div class="w-full md:w-1/3">
             <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
                 Estado del cliente
             </label>
-            <select name="estado" class="w-full px-4 py-2 rounded-md border border-gray-300 dark:border-gray-600
-                dark:bg-gray-700 dark:text-white focus:ring-2 focus:ring-custom-blue">
+            <select name="estado" class="w-full px-4 py-2 rounded-md border border-custom-gray dark:border-custom-gray
+                        dark:bg-custom-gray dark:text-custom-silverLight focus:ring-2 focus:ring-custom-red">
                 <option value="">Todos</option>
                 <option value="activo" <?php echo (isset($_GET['estado']) && $_GET['estado'] == 'Activo' ? 'selected' : ''); ?>>Activo</option>
                 <option value="inactivo" <?php echo (isset($_GET['estado']) && $_GET['estado'] == 'Inactivo' ? 'selected' : ''); ?>>Inactivo</option>
