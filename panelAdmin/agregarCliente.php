@@ -135,7 +135,7 @@ $success_message = isset($_GET['success_message']) ? $_GET['success_message'] : 
                 <p class="text-gray-600 dark:text-gray-400">Complete todos los campos para registrar un nuevo cliente empresarial</p>
             </div>
 
-            <form action="../logica/registrar-clientes.php" method="POST" class="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6" novalidate>
+            <form action="../logica/registrar-clientes.php" method="POST" class="bg-custom-silverLight dark:bg-custom-steelDark rounded-lg shadow-md p-6" novalidate>
                 <div class="space-y-6">
                     <h2 class="text-lg font-semibold text-gray-900 dark:text-white border-b border-gray-200 dark:border-gray-700 pb-2">
                         Información de la Empresa
@@ -148,8 +148,8 @@ $success_message = isset($_GET['success_message']) ? $_GET['success_message'] : 
                             <input type="text" required
                                 id="nombre_empresa"
                                 name="nombre_empresa"
-                                class="w-full px-4 py-2 rounded-md border border-gray-300 dark:border-gray-600
-                                dark:bg-gray-700 dark:text-white focus:ring-2 focus:ring-custom-blue">
+                                class="w-full px-4 py-2 rounded-md border border-custom-gray dark:border-custom-gray
+                                    dark:bg-custom-gray dark:text-custom-silverLight focus:ring-2 focus:ring-custom-red">
                         </div>
 
                         <!-- RIF -->
@@ -161,8 +161,8 @@ $success_message = isset($_GET['success_message']) ? $_GET['success_message'] : 
                                 id="rif"
                                 name="rif"
                                 placeholder="J-12345678-9"
-                                class="w-full px-4 py-2 rounded-md border border-gray-300 dark:border-gray-600
-                                dark:bg-gray-700 dark:text-white focus:ring-2 focus:ring-custom-blue">
+                                class="w-full px-4 py-2 rounded-md border border-custom-gray dark:border-custom-gray
+                                    dark:bg-custom-gray dark:text-custom-silverLight focus:ring-2 focus:ring-custom-red">
                         </div>
                         <div>
                             <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
@@ -172,8 +172,8 @@ $success_message = isset($_GET['success_message']) ? $_GET['success_message'] : 
                                 id="telefono_empresa"
                                 name="telefono_empresa"
                                 placeholder="0212-1234567"
-                                class="w-full px-4 py-2 rounded-md border border-gray-300 dark:border-gray-600
-                                dark:bg-gray-700 dark:text-white focus:ring-2 focus:ring-custom-blue">
+                                class="w-full px-4 py-2 rounded-md border border-custom-gray dark:border-custom-gray
+                                    dark:bg-custom-gray dark:text-custom-silverLight focus:ring-2 focus:ring-custom-red">
                         </div>
                     </div>
 
@@ -184,8 +184,8 @@ $success_message = isset($_GET['success_message']) ? $_GET['success_message'] : 
                         </label>
                         <textarea required name="direccion" id="direccion"
                                 rows="2"
-                                class="w-full px-4 py-2 rounded-md border border-gray-300 dark:border-gray-600
-                                dark:bg-gray-700 dark:text-white focus:ring-2 focus:ring-custom-blue"></textarea>
+                                class="w-full px-4 py-2 rounded-md border border-custom-gray dark:border-custom-gray
+                                    dark:bg-custom-gray dark:text-custom-silverLight focus:ring-2 focus:ring-custom-red"></textarea>
                     </div>
 
                     <!-- Información del Contacto -->
@@ -200,8 +200,8 @@ $success_message = isset($_GET['success_message']) ? $_GET['success_message'] : 
                                 Nombre Completo *
                             </label>
                             <input type="text" required name="nombre_contacto" id="nombre_contacto"
-                                class="w-full px-4 py-2 rounded-md border border-gray-300 dark:border-gray-600
-                                dark:bg-gray-700 dark:text-white focus:ring-2 focus:ring-custom-blue">
+                                class="w-full px-4 py-2 rounded-md border border-custom-gray dark:border-custom-gray
+                                    dark:bg-custom-gray dark:text-custom-silverLight focus:ring-2 focus:ring-custom-red">
                         </div>
 
                         <!-- Cédula del Contacto -->
@@ -211,8 +211,8 @@ $success_message = isset($_GET['success_message']) ? $_GET['success_message'] : 
                             </label>
                             <input type="text" required name="cedula_encargado" id="cedula_encargado"
                                 placeholder="V-12345678"
-                                class="w-full px-4 py-2 rounded-md border border-gray-300 dark:border-gray-600
-                                dark:bg-gray-700 dark:text-white focus:ring-2 focus:ring-custom-blue">
+                                class="w-full px-4 py-2 rounded-md border border-custom-gray dark:border-custom-gray
+                                    dark:bg-custom-gray dark:text-custom-silverLight focus:ring-2 focus:ring-custom-red">
                         </div>
 
                         <!-- Teléfono del Contacto -->
@@ -222,8 +222,8 @@ $success_message = isset($_GET['success_message']) ? $_GET['success_message'] : 
                             </label>
                             <input type="tel" required name="telefono_encargado" id="telefono_encargado"
                                 placeholder="0414-1234567"
-                                class="w-full px-4 py-2 rounded-md border border-gray-300 dark:border-gray-600
-                                dark:bg-gray-700 dark:text-white focus:ring-2 focus:ring-custom-blue">
+                                class="w-full px-4 py-2 rounded-md border border-custom-gray dark:border-custom-gray
+                                    dark:bg-custom-gray dark:text-custom-silverLight focus:ring-2 focus:ring-custom-red">
                         </div>
                     </div>
 
@@ -239,8 +239,8 @@ $success_message = isset($_GET['success_message']) ? $_GET['success_message'] : 
                                 Correo Electrónico Empresa*
                             </label>
                             <input type="email" required name="correo_empresa" id="correo_empresa"
-                                class="w-full px-4 py-2 rounded-md border border-gray-300 dark:border-gray-600
-                                dark:bg-gray-700 dark:text-white focus:ring-2 focus:ring-custom-blue">
+                                class="w-full px-4 py-2 rounded-md border border-custom-gray dark:border-custom-gray
+                                    dark:bg-custom-gray dark:text-custom-silverLight focus:ring-2 focus:ring-custom-red">
                         </div>
 
                         <!-- Contraseña -->
@@ -252,8 +252,8 @@ $success_message = isset($_GET['success_message']) ? $_GET['success_message'] : 
                                 <input type="password" required
                                     id="password"
                                     name="password"
-                                    class="w-full px-4 py-2 pr-10 rounded-md border border-gray-300 dark:border-gray-600
-                                    dark:bg-gray-700 dark:text-white focus:ring-2 focus:ring-custom-blue">
+                                    class="w-full px-4 py-2 rounded-md border border-custom-gray dark:border-custom-gray
+                                    dark:bg-custom-gray dark:text-custom-silverLight focus:ring-2 focus:ring-custom-red">
                                 <button type="button"
                                         onclick="togglePassword()"
                                         class="absolute inset-y-0 right-0 pr-3 flex items-center">
@@ -273,13 +273,13 @@ $success_message = isset($_GET['success_message']) ? $_GET['success_message'] : 
                 <!-- Botones de acción -->
                 <div class="mt-8 flex justify-end space-x-4">
                     <button onclick="history.back()" type="button"
-                            class="px-4 py-2 border border-gray-300 rounded-md text-gray-700 dark:text-gray-300
-                            hover:bg-gray-50 dark:hover:bg-gray-700">
+                            class="px-4 py-2 bg-custom-orange hover:bg-custom-wineDark dark:bg-custom-orange
+                                dark:hover:bg-custom-red text-custom-silver rounded-md transition-colors duration-200">
                         Cancelar
                     </button>
                     <button type="submit"
-                            class="px-4 py-2 bg-custom-blue hover:bg-custom-blue-light text-white rounded-md
-                            transition-colors duration-200">
+                            class="px-4 py-2 bg-custom-orange hover:bg-custom-wineDark dark:bg-custom-orange
+                                dark:hover:bg-custom-red text-custom-silver rounded-md transition-colors duration-200">
                         Registrar Cliente
                     </button>
                 </div>

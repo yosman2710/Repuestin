@@ -142,7 +142,7 @@ if ($result->num_rows > 0) {
       <!-- Lista de Clientes Desplegable -->
       <div class="max-w-7xl mx-auto">
           <?php foreach ($clientes as $cliente): ?>
-          <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden mb-4">
+          <div class="bg-custom-silverLight dark:bg-custom-steelDark rounded-lg shadow-md overflow-hidden mb-4">
               <button onclick="toggleCliente('cliente<?php echo $cliente['id']; ?>')"
                       class="w-full px-6 py-4 flex justify-between items-center text-left text-gray-900 dark:text-white hover:bg-gray-50 dark:hover:bg-gray-700">
                   <div class="flex items-center">

@@ -90,7 +90,7 @@ $total = $subtotal + $iva;
                 </a>
             </div>
             <div class="flex items-center gap-4">
-                <span class="text-sm bg-blue-900 px-3 py-1 rounded-full">
+                <span class="text-sm bg-custom-steelDark px-3 py-1 rounded-full">
                     Bienvenido, <?php echo htmlspecialchars($client_data['nombre_encargado']); ?>
                 </span>
                 <button
@@ -111,10 +111,11 @@ $total = $subtotal + $iva;
         <h2 class="text-2xl font-bold mb-6 dark:text-white">Carrito de Compras</h2>
 
         <?php if (empty($cart_items)): ?>
-            <div class="bg-white dark:bg-gray-800 shadow rounded-lg p-6 text-center">
-                <p class="text-gray-600 dark:text-gray-400 mb-4">Tu carrito está vacío</p>
+            <div class="bg-custom-silver dark:bg-custom-steelDark shadow rounded-lg p-6 text-center">
+                <p class="text-gray-600 dark:text-custom-silverLight mb-4">Tu carrito está vacío</p>
                 <a href="catalogo.php"
-                    class="inline-block bg-custom-blue hover:bg-custom-blue-light dark:bg-blue-600 dark:hover:bg-blue-700 text-white px-6 py-2 rounded-md transition-colors duration-200">
+                    class="inline-block px-6 py-2 bg-custom-orange hover:bg-custom-wineDark dark:bg-custom-orange
+                                dark:hover:bg-custom-red text-custom-silver rounded-md transition-colors duration-200">
                     Ir al Catálogo
                 </a>
             </div>
@@ -123,7 +124,7 @@ $total = $subtotal + $iva;
                 <!-- Productos en el carrito -->
                 <div class="flex-grow">
                     <?php foreach ($cart_items as $item): ?>
-                        <div class="bg-white dark:bg-gray-800 shadow rounded-lg p-6 mb-6">
+                        <div class="bg-custom-silver dark:bg-custom-steelDark shadow rounded-lg p-6 mb-6">
                             <div class="flex items-center border-b dark:border-gray-700 pb-4">
                                 <img src="<?php echo $item['foto']; ?>" alt="<?php echo htmlspecialchars($item['nombre_producto']); ?>"
                                     class="w-24 h-24 object-cover rounded-lg">
@@ -167,7 +168,7 @@ $total = $subtotal + $iva;
 
                 <!-- Resumen del pedido -->
                 <div class="w-80">
-                    <div class="bg-white dark:bg-gray-800 shadow rounded-lg p-6 sticky top-24">
+                    <div class="bg-custom-silver dark:bg-custom-steelDark shadow rounded-lg p-6 sticky top-24">
                         <h3 class="text-lg font-semibold mb-4 dark:text-white">Resumen del pedido</h3>
                         <div class="space-y-2 mb-4">
                             <div class="flex justify-between text-sm">

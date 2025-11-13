@@ -172,7 +172,7 @@ if ($cliente_id > 0) {
                                 name="nombre_empresa"
                                 value="<?php echo htmlspecialchars($cliente['nombre_empresa']); ?>"
                                 class="w-full px-4 py-2 rounded-md border border-custom-gray dark:border-custom-gray
-                                    dark:bg-custom-gray dark:text-custom-silverLight focus:ring-2 focus:ring-custom-re">
+                                    dark:bg-custom-gray dark:text-custom-silverLight focus:ring-2 focus:ring-custom-red">
                         </div>
 
                         <!-- RIF -->

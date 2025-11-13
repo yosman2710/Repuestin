@@ -144,7 +144,7 @@ $product_result = $conn->query($product_query);
     <!-- Contenido Principal -->
     <main class="pt-24 px-6 pb-20">
         <!-- Filtros -->
-        <form method="GET" action="" class="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 mb-6">
+        <form method="GET" action="" class="bg-custom-silverLight dark:bg-custom-steelDark rounded-lg shadow-md p-6 mb-6">
             <div class="flex flex-col sm:flex-row gap-4 items-end">
                 <div class="w-full sm:w-1/3">
                     <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
@@ -155,16 +155,16 @@ $product_result = $conn->query($product_query);
                         name="search"
                         placeholder="Nombre del producto..."
                         value="<?php echo htmlspecialchars($search); ?>"
-                        class="w-full px-4 py-2 rounded-md border border-gray-300 dark:border-gray-600
-                            dark:bg-gray-700 dark:text-white focus:ring-2 focus:ring-custom-blue"
+                        class="w-full px-4 py-2 rounded-md border border-custom-gray dark:border-custom-gray
+                                    dark:bg-custom-gray dark:text-custom-silverLight focus:ring-2 focus:ring-custom-red"
                     >
                 </div>
                 <div class="w-full sm:w-1/3">
                     <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
                         Filtrar por
                     </label>
-                    <select name="filter" class="w-full px-4 py-2 rounded-md border border-gray-300 dark:border-gray-600
-                                dark:bg-gray-700 dark:text-white focus:ring-2 focus:ring-custom-blue">
+                    <select name="filter" class="w-full px-4 py-2 rounded-md border border-custom-gray dark:border-custom-gray
+                                    dark:bg-custom-gray dark:text-custom-silverLight focus:ring-2 focus:ring-custom-red">
                         <option value="">Todas las categorías</option>
                         <optgroup label="Categorías">
                         <option value="">Seleccione una categoría</option>
@@ -197,8 +197,8 @@ $product_result = $conn->query($product_query);
                     <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
                         Ordenar por
                     </label>
-                    <select name="sort" class="w-full px-4 py-2 rounded-md border border-gray-300 dark:border-gray-600
-                                dark:bg-gray-700 dark:text-white focus:ring-2 focus:ring-custom-blue">
+                    <select name="sort" class="w-full px-4 py-2 rounded-md border border-custom-gray dark:border-custom-gray
+                                    dark:bg-custom-gray dark:text-custom-silverLight focus:ring-2 focus:ring-custom-red">
                         <option value="">Sin ordenar</option>
                         <option <?php echo $sort === 'Precio: Menor a mayor' ? 'selected' : ''; ?>>Precio: Menor a mayor</option>
                         <option <?php echo $sort === 'Precio: Mayor a menor' ? 'selected' : ''; ?>>Precio: Mayor a menor</option>
@@ -207,8 +207,8 @@ $product_result = $conn->query($product_query);
                         <option <?php echo $sort === 'Mayor stock' ? 'selected' : ''; ?>>Mayor stock</option>
                     </select>
                 </div>
-                <button type="submit" class="w-full sm:w-auto px-6 py-2 bg-custom-blue hover:bg-custom-blue-light dark:bg-blue-600
-                            dark:hover:bg-blue-700 text-white rounded-md transition-colors duration-200">
+                <button type="submit" class="px-4 py-2 bg-custom-orange hover:bg-custom-wineDark dark:bg-custom-orange
+                                dark:hover:bg-custom-red text-custom-silver rounded-md transition-colors duration-200">
                     Aplicar Filtros
                 </button>
             </div>
@@ -220,7 +220,7 @@ $product_result = $conn->query($product_query);
                 $foto_productos = obtenerRutasArchivos($product['id_producto']);
 
                 ?>
-                <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300 w-full max-w-sm mx-auto">
+                <div class="bg-custom-silverLight dark:bg-custom-steelDark rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300 w-full max-w-sm mx-auto">
                     <div class="relative">
                         <img src="<?php echo $foto_productos; ?>" alt="<?php echo htmlspecialchars($product['nombre_producto']); ?>" class="w-full h-48 object-cover">
                         <span class="absolute top-2 right-2 bg-green-500 text-white px-2 py-1 rounded-full text-xs">
@@ -233,12 +233,13 @@ $product_result = $conn->query($product_query);
                             <?php echo htmlspecialchars($product['nombre_producto']); ?>
                         </h3>
                         <div class="flex justify-between items-center mb-3">
-                            <span class="text-2xl font-bold text-custom-blue dark:text-blue-400">$<?php echo htmlspecialchars($product['precio_producto']); ?></span>
+                            <span class="text-2xl font-bold text-custom-orange dark:text-custom-silver">$<?php echo htmlspecialchars($product['precio_producto']); ?></span>
                             <span class="text-sm text-gray-600 dark:text-gray-300">Stock: <?php echo htmlspecialchars($product['stock_producto']); ?></span>
                         </div>
                         <div>
                             <a href="producto-detalle.php?id=<?php echo htmlspecialchars($product['id_producto']); ?>"
-                            class="block w-full text-center bg-custom-blue hover:bg-custom-blue-light dark:bg-blue-600 dark:hover:bg-blue-700 text-white py-2 px-4 rounded-md transition-colors duration-200">
+                            class="block w-full text-center bg-custom-orange hover:bg-custom-wineDark dark:bg-custom-orange
+                                dark:hover:bg-custom-red text-custom-silver py-2 px-4 rounded-md transition-colors duration-200">
                                 Ver Detalles
                             </a>
                         </div>

@@ -290,15 +290,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["mensaje"])) {
 
     <main class="min-h-screen flex flex-col items-center justify-center px-4 pt-16">
         <div class="bg-custom-silverLight dark:bg-custom-steelDark p-10 rounded-lg custom-shadow max-w-2xl w-full relative">
-            <div class="emoji-container" id="emoji-container">😇</div>
             
                 <div id="chatbox" class="h-80 mb-4 p-4 flex flex-col space-y-2">
-                <?php
-$historialCargado = obtenerHistorialDB($GLOBALS['conn'], $GLOBALS['cliente_id_actual']);
+                <?php
+                $historialCargado = obtenerHistorialDB($GLOBALS['conn'], $GLOBALS['cliente_id_actual']);
 
-if (is_array($historialCargado)) {
-                foreach ($historialCargado as $interaccion) {
-                        // Definir clases CSS basadas en el rol
+                if (is_array($historialCargado)) {
+                    foreach ($historialCargado as $interaccion) {
+                            // Definir clases CSS basadas en el rol
                         if ($interaccion['rol'] === 'usuario') {
                             $clase = 'bg-blue-500 text-white self-end text-right';
                         } else { // rol === 'bot'
@@ -309,9 +308,9 @@ if (is_array($historialCargado)) {
                         // Mostrar el mensaje
                         echo "<div class='rounded-lg p-2 mb-2 max-w-xs {$clase}'>{$interaccion['mensaje']}</div>"; 
                         }
-                    }
+                }
                 ?>
-            </div>
+                </div>
             
                 <input type="text" id="userInput" placeholder="Escribe tu mensaje..." class="w-full border border-gray-300 dark:border-gray-600 rounded-lg px-4 py-2 focus:outline-none focus:border-custom-blue dark:focus:border-blue-500 dark:bg-custom-gray dark:text-white">
             <button id="sendButton" class="w-full bg-custom-orange hover:bg-custom-wineDark dark:bg-custom-orange dark:hover:bg-custom-red text-custom-silver py-2 px-4 rounded-md transition-colors duration-200 font-semibold mt-2">
@@ -377,7 +376,6 @@ if (is_array($historialCargado)) {
         const chatbox = document.getElementById('chatbox');
         const userInput = document.getElementById('userInput');
         const sendButton = document.getElementById('sendButton');
-        const emojiContainer = document.getElementById('emoji-container');
 
         // Scroll al final al cargar la página (para ver el historial)
         document.addEventListener('DOMContentLoaded', () => {
@@ -397,16 +395,8 @@ if (is_array($historialCargado)) {
             // 1. Mostrar mensaje del usuario inmediatamente
             const userMessageElement = document.createElement('div');
             userMessageElement.textContent = userMessage;
-            userMessageElement.classList.add('bg-blue-500', 'text-white', 'rounded-lg', 'p-2', 'mb-2', 'max-w-xs', 'self-end', 'text-right');
+            userMessageElement.classList.add('bg-custom-orange', 'text-white', 'rounded-lg', 'p-2', 'mb-2', 'max-w-xs', 'self-end', 'text-right');
             chatbox.appendChild(userMessageElement);
-
-            // 2. Animación del emoji
-            emojiContainer.classList.add('left');
-            emojiContainer.textContent = '😈';
-            setTimeout(() => {
-                emojiContainer.classList.remove('left');
-                emojiContainer.textContent = '😇';
-            }, 3000);
 
             // 3. Mostrar indicador de escritura del bot
             const typingIndicator = document.createElement('div');
@@ -438,7 +428,7 @@ if (is_array($historialCargado)) {
                     const botMessageElement = document.createElement('div');
                     botMessageElement.textContent = response;
                     // Clases dinámicas para dark mode
-                    const botClasses = ['rounded-lg', 'p-2', 'mb-2', 'max-w-xs', 'self-start', 'text-left', 'bg-gray-300', 'dark:bg-gray-700', 'text-gray-800', 'dark:text-white'];
+                    const botClasses = ['rounded-lg', 'p-2', 'mb-2', 'max-w-xs', 'self-start', 'text-left', 'bg-custom-gray', 'dark:bg-custom-gray', 'text-gray-800', 'dark:text-white'];
                     botMessageElement.classList.add(...botClasses);
                     chatbox.appendChild(botMessageElement);
 

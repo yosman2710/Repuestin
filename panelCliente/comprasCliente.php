@@ -109,7 +109,7 @@ $result_rechazadas = $stmt->get_result();
             <div class="bg-white dark:bg-gray-800 rounded-lg shadow overflow-hidden">
                 <div class="overflow-x-auto">
                     <table class="min-w-full divide-y divide-gray-200 dark:divide-gray-700">
-                        <thead class="bg-gray-50 dark:bg-gray-700">
+                        <thead class="bg-gray-50 dark:bg-custom-gray">
                             <tr>
                                 <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">
                                     Orden #
@@ -128,7 +128,7 @@ $result_rechazadas = $stmt->get_result();
                                 </th>
                             </tr>
                         </thead>
-                        <tbody class="bg-white dark:bg-gray-800 divide-y divide-gray-200 dark:divide-gray-700">
+                        <tbody class="bg-custom-silverLight dark:bg-custom-steelDark divide-y divide-gray-200 dark:divide-gray-700">
                             <?php if ($result_aprobadas->num_rows > 0): ?>
                                 <?php while($row = $result_aprobadas->fetch_assoc()): ?>
                                     <tr>
@@ -148,7 +148,7 @@ $result_rechazadas = $stmt->get_result();
                                         </td>
                                         <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
                                             <a href="./detalleOrdenCliente.php?id=<?php echo $row['id_orden']; ?>"
-                                            class="text-custom-blue hover:text-custom-blue-light">
+                                            class="text-custom-orange hover:text-custom-orange">
                                                 Ver Detalle
                                             </a>
                                         </td>

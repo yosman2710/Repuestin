@@ -59,12 +59,12 @@ $_SESSION['time'] = time();
         <h1 class="text-2xl font-bold text-gray-900 dark:text-white">Reportes</h1>
         <p class="text-gray-600 dark:text-gray-400">Seleccione el tipo de reporte y utilice los filtros para generar reportes específicos</p>
       </div>
-      <form class="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 mb-6">
+      <form class="bg-custom-silverLight dark:bg-custom-steelDark rounded-lg shadow-md p-6 mb-6">
         <div class="mb-6">
           <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
             Tipo de Reporte
           </label>
-          <select name="tipo_reporte" id="tipo_reporte" class="w-full px-4 py-2 rounded-md border border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-white focus:ring-2 focus:ring-custom-blue" onchange="toggleFilters()">
+          <select name="tipo_reporte" id="tipo_reporte" class="w-full px-4 py-2 rounded-md border border-custom-gray dark:border-custom-gray dark:bg-custom-gray dark:text-custom-silverLight focus:ring-2 focus:ring-custom-red" onchange="toggleFilters()">
             <option value="">Seleccione un tipo de reporte</option>
             <option value="clientes">Clientes</option>
             <option value="repuestos">Repuestos</option>
@@ -76,7 +76,7 @@ $_SESSION['time'] = time();
             <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
               Estado de Clientes
             </label>
-            <select name="estado_clientes" id="estado_clientes" class="cliente-filter w-full px-4 py-2 rounded-md border border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-white focus:ring-2 focus:ring-custom-blue" disabled>
+            <select name="estado_clientes" id="estado_clientes" class="cliente-filter w-full px-4 py-2 rounded-md border border-custom-gray dark:border-custom-gray dark:bg-custom-gray dark:text-custom-silverLight focus:ring-2 focus:ring-custom-red" disabled>
               <option value="">Seleccione un estado</option>
               <option value="activos">Activos</option>
               <option value="inactivos">Inactivos</option>
@@ -87,7 +87,7 @@ $_SESSION['time'] = time();
             <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
               Estado de Stock
             </label>
-            <select name="estado_stock" id="estado_stock" class="repuesto-filter w-full px-4 py-2 rounded-md border border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-white focus:ring-2 focus:ring-custom-blue" disabled>
+            <select name="estado_stock" id="estado_stock" class="repuesto-filter w-full px-4 py-2 rounded-md border border-custom-gray dark:border-custom-gray dark:bg-custom-gray dark:text-custom-silverLight focus:ring-2 focus:ring-custom-red" disabled>
               <option value="">Seleccione un estado</option>
               <option value="con_stock">Con Stock</option>
               <option value="sin_stock">Sin Stock</option>
@@ -98,7 +98,7 @@ $_SESSION['time'] = time();
             <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
               Categoría de Repuestos
             </label>
-            <select name="categoria_repuestos" id="categoria_repuestos" class="repuesto-filter w-full px-4 py-2 rounded-md border border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-white focus:ring-2 focus:ring-custom-blue" disabled>
+            <select name="categoria_repuestos" id="categoria_repuestos" class="repuesto-filter w-full px-4 py-2 rounded-md border border-custom-gray dark:border-custom-gray dark:bg-custom-gray dark:text-custom-silverLight focus:ring-2 focus:ring-custom-red" disabled>
               <option value="">Seleccione una categoría</option>
               <option>Frenos</option>
               <option>Inyección</option>
@@ -118,7 +118,7 @@ $_SESSION['time'] = time();
             <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
               Marca de Repuestos
             </label>
-            <select name="marca_repuestos" id="marca_repuestos" class="repuesto-filter w-full px-4 py-2 rounded-md border border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-white focus:ring-2 focus:ring-custom-blue" disabled>
+            <select name="marca_repuestos" id="marca_repuestos" class="repuesto-filter w-full px-4 py-2 rounded-md border border-custom-gray dark:border-custom-gray dark:bg-custom-gray dark:text-custom-silverLight focus:ring-2 focus:ring-custom-red" disabled>
               <option value="">Seleccione una marca</option>
               <option>Marca A</option>
               <option>Marca B</option>
@@ -127,15 +127,15 @@ $_SESSION['time'] = time();
           </div>
         </div>
         <div class="mt-6">
-          <button type="submit" class="w-full px-4 py-2 bg-custom-blue text-white rounded-md hover:bg-custom-blue-light transition-colors duration-200">Generar Reporte</button>
+          <button type="submit" class="px-4 py-2 bg-custom-orange hover:bg-custom-wineDark dark:bg-custom-orange dark:hover:bg-custom-red text-custom-silver rounded-md transition-colors duration-200">Generar Reporte</button>
         </div>
       </form>
       <!-- Tabla de Resultados -->
-      <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6">
+      <div class="bg-custom-silverLight dark:bg-custom-steelDark rounded-lg shadow-md p-6">
         <h2 class="text-lg font-semibold text-gray-900 dark:text-white mb-4">Resultados del Reporte</h2>
         <table class="w-full table-auto">
           <thead>
-            <tr class="bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300">
+            <tr class="bg-gray-200 dark:bg-custom-gray text-gray-700 dark:text-gray-300">
               <th class="px-4 py-2">Código</th>
               <th class="px-4 py-2">Nombre</th>
               <th class="px-4 py-2">Categoría</th>

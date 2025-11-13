@@ -95,7 +95,7 @@ $success_message = isset($_GET['success_message']) ? $_GET['success_message'] : 
             </button>
         </div>
         
-        <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden mb-6">
+        <div class="bg-custom-silverLight dark:bg-custom-steelDark rounded-lg shadow-md overflow-hidden mb-6">
             <canvas id="chart" width="550" height="205"></canvas>
         </div>
            

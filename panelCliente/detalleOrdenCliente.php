@@ -92,7 +92,7 @@ $result_items = $stmt->get_result();
         </div>
 
         <!-- Detalle de la Orden -->
-        <div class="max-w-7xl mx-auto bg-white dark:bg-gray-800 rounded-lg shadow-md p-6">
+        <div class="max-w-7xl mx-auto bg-custom-silverLight dark:bg-custom-steelDark rounded-lg shadow-md p-6">
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
                 <div>
                     <h2 class="text-lg font-bold text-gray-900 dark:text-white">Número de Orden:</h2>
@@ -123,7 +123,7 @@ $result_items = $stmt->get_result();
             <!-- Order Items Table -->
             <div class="overflow-x-auto">
                 <table class="min-w-full divide-y divide-gray-200 dark:divide-gray-700">
-                    <thead class="bg-gray-50 dark:bg-gray-700">
+                    <thead class="bg-gray-50 dark:bg-custom-gray">
                         <tr>
                             <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">Producto</th>
                             <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">Cantidad</th>
@@ -131,7 +131,7 @@ $result_items = $stmt->get_result();
                             <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">Subtotal</th>
                         </tr>
                     </thead>
-                    <tbody class="bg-white dark:bg-gray-800 divide-y divide-gray-200 dark:divide-gray-700">
+                    <tbody class="bg-custom-silverLight dark:bg-custom-steelDark divide-y divide-gray-200 dark:divide-gray-700">
                         <?php while($item = $result_items->fetch_assoc()): ?>
                             <tr>
                                 <td class="px-6 py-4 whitespace-nowrap">
@@ -156,7 +156,7 @@ $result_items = $stmt->get_result();
                                 </td>
                             </tr>
                         <?php endwhile; ?>
-                        <tr class="bg-gray-50 dark:bg-gray-700">
+                        <tr class="bg-gray-50 dark:bg-custom-gray">
                             <td colspan="3" class="px-6 py-4 text-right font-bold text-gray-900 dark:text-white">Total:</td>
                             <td class="px-6 py-4 whitespace-nowrap">
                                 <div class="text-sm font-bold text-gray-900 dark:text-white">
