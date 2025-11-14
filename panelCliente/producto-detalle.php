@@ -92,15 +92,15 @@ $foto_producto = obtenerRutasArchivos($producto['id_producto']);
     <main class="pt-24 px-6 pb-20 max-w-7xl mx-auto">
         <!-- Breadcrumb -->
         <div class="flex items-center space-x-2 text-sm mb-6">
-            <a href="catalogo.php" class="text-custom-blue dark:text-blue-400 hover:underline">Catálogo</a>
-            <span class="text-gray-500 dark:text-gray-400">/</span>
-            <span class="text-gray-600 dark:text-gray-300"><?php echo htmlspecialchars($producto['nombre_producto']); ?></span>
+            <a href="catalogo.php" class="text-custom-orange dark:text-custom-orange hover:underline">Catálogo</a>
+            <span class="text-gray-500 dark:text-custom-gray">/</span>
+            <span class="text-gray-600 dark:text-custom-gray"><?php echo htmlspecialchars($producto['nombre_producto']); ?></span>
         </div>
 
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
             <!-- Imagen Principal -->
             <div class="space-y-4">
-                <div class="bg-white dark:bg-gray-800 rounded-lg overflow-hidden shadow-lg">
+                <div class="bg-custom-silverLight dark:bg-custom-steelDark rounded-lg overflow-hidden shadow-lg">
                     <img src="<?php echo $foto_producto; ?>" alt="<?php echo htmlspecialchars($producto['nombre_producto']); ?>" class="w-full h-96 object-contain">
                 </div>
             </div>
@@ -110,12 +110,13 @@ $foto_producto = obtenerRutasArchivos($producto['id_producto']);
                 <div class="flex justify-between items-start">
                     <div>
                         <h1 class="text-2xl font-bold text-gray-900 dark:text-white"><?php echo $producto['nombre_producto']; ?></h1>
-                        <p class="text-3xl font-bold text-custom-blue dark:text-blue-400 mt-2">$<?php echo number_format($producto['precio_producto'], 2); ?></p>
+                        <p class="text-3xl font-bold text-custom-black dark:text-custom-silverLight mt-2">$<?php echo number_format($producto['precio_producto'], 2); ?></p>
                         <p class="text-sm text-gray-600 dark:text-gray-300 mt-1">Stock disponible: <?php echo $producto['stock_producto']; ?></p>
                     </div>
                     <?php if ($producto['stock_producto'] > 0): ?>
                     <button onclick="addToCart(<?php echo $producto['id_producto']; ?>)"
-                        class="inline-block bg-custom-blue hover:bg-custom-blue-light dark:bg-blue-600 dark:hover:bg-blue-700 text-white px-6 py-2 rounded-md transition-colors duration-200">
+                        class="inline-block bg-custom-orange hover:bg-custom-wineDark dark:bg-custom-orange
+                        dark:hover:bg-custom-red text-custom-silver px-6 py-2 rounded-md transition-colors duration-200">
                         Agregar al Carrito
                     </button>
                     <?php endif; ?>

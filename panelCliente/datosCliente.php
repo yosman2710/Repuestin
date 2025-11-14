@@ -101,7 +101,7 @@ $client_data = $result->fetch_assoc();
 
     <?php echo $message; ?>
 
-    <form method="POST" class="bg-white dark:bg-gray-800 shadow rounded-lg p-6">
+    <form method="POST" class="bg-custom-silver dark:bg-custom-steelDark shadow rounded-lg p-6">
       <!-- Company Information (Read-only) -->
       <div class="mb-6">
         <h3 class="text-lg font-semibold mb-4 dark:text-white">Datos de la Empresa</h3>
@@ -110,7 +110,7 @@ $client_data = $result->fetch_assoc();
             <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Nombre de la Empresa</label>
             <div class="relative">
               <input type="text" value="<?php echo htmlspecialchars($client_data['nombre_empresa']); ?>"
-                class="w-full px-3 py-2 bg-gray-100 dark:bg-gray-700 dark:text-white rounded-md pr-10" readonly>
+                class="w-full px-3 py-2 bg-gray-100 dark:bg-custom-gray dark:text-custom-silverLight rounded-md pr-10" readonly>
               <span class="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-500">🔒</span>
             </div>
           </div>
@@ -118,7 +118,7 @@ $client_data = $result->fetch_assoc();
             <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">RIF</label>
             <div class="relative">
               <input type="text" value="<?php echo htmlspecialchars($client_data['rif']); ?>"
-                class="w-full px-3 py-2 bg-gray-100 dark:bg-gray-700 dark:text-white rounded-md pr-10" readonly>
+                class="w-full px-3 py-2 bg-gray-100 dark:bg-custom-gray dark:text-custom-silverLight rounded-md pr-10" readonly>
               <span class="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-500">🔒</span>
             </div>
           </div>
@@ -126,7 +126,7 @@ $client_data = $result->fetch_assoc();
             <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Teléfono Empresa</label>
             <div class="relative">
               <input type="text" value="<?php echo htmlspecialchars($client_data['telefono_empresa']); ?>"
-                class="w-full px-3 py-2 bg-gray-100 dark:bg-gray-700 dark:text-white rounded-md pr-10" readonly>
+                class="w-full px-3 py-2 bg-gray-100 dark:bg-custom-gray dark:text-custom-silverLight rounded-md pr-10" readonly>
               <span class="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-500">🔒</span>
             </div>
           </div>
@@ -134,7 +134,7 @@ $client_data = $result->fetch_assoc();
             <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Dirección</label>
             <div class="relative">
               <input type="text" value="<?php echo htmlspecialchars($client_data['direccion']); ?>"
-                class="w-full px-3 py-2 bg-gray-100 dark:bg-gray-700 dark:text-white rounded-md pr-10" readonly>
+                class="w-full px-3 py-2 bg-gray-100 dark:bg-custom-gray dark:text-custom-silverLight rounded-md pr-10" readonly>
               <span class="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-500">🔒</span>
             </div>
           </div>
@@ -148,29 +148,29 @@ $client_data = $result->fetch_assoc();
           <div>
             <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Nombre del Encargado</label>
             <input type="text" name="nombre_encargado" value="<?php echo htmlspecialchars($client_data['nombre_encargado']); ?>"
-              class="w-full px-3 py-2 border border-transparent dark:border-transparent rounded-md dark:bg-gray-700 dark:text-white focus:border-blue-500 dark:focus:border-blue-400 transition-colors duration-200">
+              class="w-full px-3 py-2 border border-transparent dark:border-transparent rounded-md dark:bg-custom-gray dark:text-custom-silverLight focus:border-blue-500 dark:focus:border-blue-400 transition-colors duration-200">
           </div>
           <div>
             <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Cédula</label>
             <input type="text" name="cedula_encargado" value="<?php echo htmlspecialchars($client_data['cedula_encargado']); ?>"
-              class="w-full px-3 py-2 border border-transparent dark:border-transparent rounded-md dark:bg-gray-700 dark:text-white focus:border-blue-500 dark:focus:border-blue-400 transition-colors duration-200">
+              class="w-full px-3 py-2 border border-transparent dark:border-transparent rounded-md dark:bg-custom-gray dark:text-custom-silverLight focus:border-blue-500 dark:focus:border-blue-400 transition-colors duration-200">
           </div>
           <div>
             <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Correo Electrónico</label>
             <input type="email" name="correo" value="<?php echo htmlspecialchars($client_data['correo']); ?>"
-              class="w-full px-3 py-2 border border-transparent dark:border-transparent rounded-md dark:bg-gray-700 dark:text-white focus:border-blue-500 dark:focus:border-blue-400 transition-colors duration-200">
+              class="w-full px-3 py-2 border border-transparent dark:border-transparent rounded-md dark:bg-custom-gray dark:text-custom-silverLight focus:border-blue-500 dark:focus:border-blue-400 transition-colors duration-200">
           </div>
           <div>
             <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Nueva Contraseña (opcional)</label>
-            <input type="password" name="contrasena" placeholder="Dejar en blanco para mantener la actual"
-              class="w-full px-3 py-2 border border-transparent dark:border-transparent rounded-md dark:bg-gray-700 dark:text-white focus:border-blue-500 dark:focus:border-blue-400 transition-colors duration-200">
+            <input type="password" name="contrasena" 
+              class="w-full px-3 py-2 border border-transparent dark:border-transparent rounded-md dark:bg-custom-gray dark:text-custom-silverLight focus:border-blue-500 dark:focus:border-blue-400 transition-colors duration-200">
           </div>
         </div>
       </div>
 
       <div class="flex justify-end">
         <button type="submit"
-          class="bg-custom-blue hover:bg-custom-blue-light text-white px-6 py-2 rounded-md transition-colors duration-200">
+          class="bg-custom-orange hover:bg-custom-wineDark dark:bg-custom-orange dark:hover:bg-custom-red text-custom-silver px-6 py-2 rounded-md transition-colors duration-200">
           Guardar Cambios
         </button>
       </div>
