@@ -91,7 +91,7 @@ $result_aprobadas = $conn->query($sql_aprobadas);
         </div>
 
         <!-- Lista de Órdenes Pendientes -->
-        <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden mb-6">
+        <div class="bg-custom-silverLight dark:bg-custom-steelDark rounded-lg shadow-md overflow-hidden mb-6">
             <button onclick="togglePendientes()"
                     class="w-full px-6 py-4 flex justify-between items-center text-left text-gray-900 dark:text-white hover:bg-gray-50 dark:hover:bg-gray-700">
                 <div class="flex items-center">
@@ -105,7 +105,7 @@ $result_aprobadas = $conn->query($sql_aprobadas);
             <div id="lista-pendientes">
                 <div class="overflow-x-auto">
                     <table class="min-w-full divide-y divide-gray-200 dark:divide-gray-700">
-                        <thead class="bg-gray-50 dark:bg-gray-700">
+                        <thead class="bg-gray-50 dark:bg-custom-gray">
                             <tr>
                                 <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">
                                     Número de Orden
@@ -128,7 +128,7 @@ $result_aprobadas = $conn->query($sql_aprobadas);
                             </tr>
                         </thead>
                         <!-- ordenes pendientes-->
-                        <tbody class="bg-white dark:bg-gray-800 divide-y divide-gray-200 dark:divide-gray-700">
+                        <tbody class="bg-custom-silverLight dark:bg-custom-steelDark divide-y divide-gray-200 dark:divide-gray-700">
                             <?php if ($result_pendientes->num_rows > 0): ?>
                                 <?php while($row = $result_pendientes->fetch_assoc()): ?>
                                     <tr>
@@ -199,7 +199,7 @@ $result_aprobadas = $conn->query($sql_aprobadas);
         </div>
 
         <!--ordenes Aprobadas -->
-        <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden">
+        <div class="bg-custom-silverLight dark:bg-custom-steelDark rounded-lg shadow-md overflow-hidden">
             <button onclick="toggleAprobadas()"
                     class="w-full px-6 py-4 flex justify-between items-center text-left text-gray-900 dark:text-white hover:bg-gray-50 dark:hover:bg-gray-700">
                 <div class="flex items-center">
@@ -213,7 +213,7 @@ $result_aprobadas = $conn->query($sql_aprobadas);
             <div id="lista-aprobadas">
                 <div class="overflow-x-auto">
                     <table class="min-w-full divide-y divide-gray-200 dark:divide-gray-700">
-                        <thead class="bg-gray-50 dark:bg-gray-700">
+                        <thead class="bg-gray-50 dark:bg-custom-gray">
                             <tr>
                                 <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">
                                     Número de Orden
@@ -237,7 +237,7 @@ $result_aprobadas = $conn->query($sql_aprobadas);
                         </thead>
 
                         <!-- valores ordenes aprobadas-->
-                        <tbody class="bg-white dark:bg-gray-800 divide-y divide-gray-200 dark:divide-gray-700">
+                        <tbody class="bg-custom-silverLight dark:bg-custom-steelDark divide-y divide-gray-200 dark:divide-gray-700">
                             <?php if ($result_aprobadas->num_rows > 0): ?>
                                 <?php while($row = $result_aprobadas->fetch_assoc()): ?>
                                     <tr>

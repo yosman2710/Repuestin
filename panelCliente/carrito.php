@@ -195,7 +195,7 @@ $total = $subtotal + $iva;
                             </div>
                         </div>
                         <button onclick="createOrder()"
-                            class="w-full bg-custom-blue hover:bg-custom-blue-light text-white py-2 px-4 rounded-lg transition-colors">
+                            class="w-full bg-custom-orange hover:bg-custom-wineDark dark:bg-custom-orange dark:hover:bg-custom-red text-custom-silver py-2 px-4 rounded-lg transition-colors">
                             Proceder al pago
                         </button>
                     </div>
